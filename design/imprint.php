@@ -26,45 +26,20 @@
 		
 		<div class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Administration</a>
-          </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="user.php">Benutzerverwaltung</a></li>
-              <li class="active"><a href="admin.php">Angebotsverwaltung</a></li>
+              <li><a href="index.php">Home</a></li>
+              <li><a href="search.php">Angebote durchsuchen</a></li>
+              <li><a href="login.php">Login</a></li>
+              <li class="active"><a href="imprint.php">Impressum</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </div>
 
 		<div id="content">
-			<h3>Neues Angebot - %Loginname%</h3>
-			<form>
-				<input type="text" class="form-control" placeholder="Angebotsname">
-				<input type="text" class="form-control" placeholder="Preis">
-				<input type="text" class="form-control" placeholder="Gültig bis">
-				<textarea class="form-control" rows="3" placeholder="Beschreibung"></textarea>
-				<button type="submit" class="btn btn-primary">Anlegen</button>
-			</form>
+			<h3> Impressum</h3>
 			
-			<h3>Eigene Angebote:</h3>
-			<table class="table table-striped">
-				<tr>
-					<th>Angebotsname</th>
-					<th>Preis</th>
-					<th>Gültig bis</th>
-					<th>Beschreibung</th>
-					<th>Bearbeiten</th>
-				  </tr>
-				  <tr>
-					<td>Bsp</td>
-					<td>Beispiel</td>
-					<td>Beispiel</td>
-					<td>Beispiel</td>
-					<td><button class="btn btn-info"><span class="glyphicon glyphicon-edit"></span></button><button class="btn btn-danger icon-t"><span class="glyphicon glyphicon-trash"></span></button></td>
-				  </tr>
-			</table>
 		</div>
 	</div>
    
@@ -73,4 +48,3 @@
 		</div>
 </body>
 </html>
-

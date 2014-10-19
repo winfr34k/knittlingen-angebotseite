@@ -18,7 +18,7 @@
 		  });
 		</script>
 	
-	<title>Adventsangebote - GVV</title>
+	<title>Angebote durchsuchen - GVV</title>
 </head>
 <body>
 	<div id="mainarea">
@@ -29,8 +29,8 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><a href="index.php">Home</a></li>
-              <li><a href="search.php">Angebote durchsuchen</a></li>
-              <li class="active"><a href="login.php">Login</a></li>
+              <li class="active"><a href="search.php">Angebote durchsuchen</a></li>
+              <li><a href="login.php">Login</a></li>
               <li><a href="imprint.php">Impressum</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -38,31 +38,7 @@
       </div>
 
 		<div id="content">
-			<h2>Login für Angebotsersteller</h2>
-
-			<form class="form-horizontal" role="form">
-			  <div class="form-group">
-				<label for="inputEmail3" class="col-sm-2 control-label">Benutzer</label>
-				<div class="col-sm-10">
-				  <input type="text" class="form-control" id="inputEmail3" placeholder="Benutzer">
-				</div>
-			  </div>
-			  <div class="form-group">
-				<label for="inputPassword3" class="col-sm-2 control-label">Passwort</label>
-				<div class="col-sm-10">
-				  <input type="password" class="form-control" id="inputPassword3" placeholder="Passwort">
-				</div>
-			  </div>
-			  <div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-				</div>
-			  </div>
-			  <div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-				  <button type="submit" class="btn btn-default">Login</button>
-				</div>
-			  </div>
-			</form>
+			<h2>Angebote durchsuchen</h2>
 		</div>
 	</div>
    

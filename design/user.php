@@ -31,8 +31,8 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Benutzerverwaltung</a></li>
-              <li><a href="#">Angebotsverwaltung</a></li>
+              <li class="active"><a href="user.php">Benutzerverwaltung</a></li>
+              <li><a href="admin.php">Angebotsverwaltung</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
