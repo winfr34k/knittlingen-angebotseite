@@ -25,6 +25,7 @@ html, body{
 	padding: 15px;
 	border-bottom-right-radius: 20px;
 	border-bottom-left-radius: 20px; 
+	border-top-right-radius: 20px;
 	border-right: 3px solid #A4A4A4;
 	-webkit-box-shadow: 0 1px 40px 0px #969696;
 	-moz-box-shadow: 0 1px 40px 0px #969696;
@@ -34,13 +35,10 @@ html, body{
 	color: #999;
 	text-align: right;
 }
-.angebot{
-	background: yellow;
-}
+.angebot{}
 
 .description{
 	float: left;
-	background: green;
 }
 
 .firma{
