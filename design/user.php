@@ -18,6 +18,12 @@
 		<div class="navbar"
 		</div>
 		<div class="content">
+			<h3> Gewerbe Art Anlegen</h3>
+			<form>
+				<input type="text" class="form-control" placeholder="Art des Gewerbes">
+				<button type="submit" class="btn btn-primary">Anlegen</button>
+			</form>
+			
 			<h3> Neue User Anlegen:</h3>
 			<form>
 				<input type="text" class="form-control" placeholder="Firmenname">
@@ -37,14 +43,15 @@
 						<th>Loginname</th>
 						<th>Gewerbe</th>
 						<th>Webseite</th>
+						<th>Bearbeiten</th>
 					  </tr>
 					  <tr>
 						<td>Beispielfirma</td>
 						<td>Beispielname</td>
 						<td>BeispielGewerbe</td>
 						<td>BeispielWebseite</td>
+						<td><button class="btn btn-info"><span class="glyphicon glyphicon-edit"></span></button><button class="btn btn-danger icon-t"><span class="glyphicon glyphicon-trash"></span></button></td>
 					  </tr>
-					  
 				</table>
 		</div>
 	</div>

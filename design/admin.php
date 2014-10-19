@@ -34,12 +34,14 @@
 					<th>Preis</th>
 					<th>Gültig bis</th>
 					<th>Beschreibung</th>
+					<th>Bearbeiten</th>
 				  </tr>
 				  <tr>
 					<td>Bsp</td>
 					<td>Beispiel</td>
 					<td>Beispiel</td>
 					<td>Beispiel</td>
+					<td><button class="btn btn-info"><span class="glyphicon glyphicon-edit"></span></button><button class="btn btn-danger icon-t"><span class="glyphicon glyphicon-trash"></span></button></td>
 				  </tr>
 			</table>
 		</div>

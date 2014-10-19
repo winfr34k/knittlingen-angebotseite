@@ -4,6 +4,10 @@ html, body{
 	background-image: url(images/background.jpg);
 }
 
+button{
+	margin-left: 5px;
+}
+
 #mainarea{
 	width: 80%;
 	margin: 0px auto;
@@ -57,5 +61,5 @@ html, body{
 }
 
 .form-control{
-	margin-bottom: 2px;
+	margin-bottom: 8px;
 }
