@@ -18,11 +18,25 @@
 		  });
 		</script>
 	
-	<title>Nutzerverwaltung - GVV</title>
+	<title>Adventsangebote - GVV</title>
 </head>
 <body>
 	<div id="mainarea">
 		<div id="header"></div>
+		
+		<div class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Administration</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Benutzerverwaltung</a></li>
+              <li><a href="#">Angebotsverwaltung</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
 
 		<div id="content">
 			<h3> Gewerbe Art Anlegen</h3>

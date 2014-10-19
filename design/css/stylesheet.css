@@ -17,6 +17,11 @@ table{
 	background: #F0F0F0;
 }
 
+div.navbar{
+	margin: 0px auto;
+	border-radius: 0px;
+}
+
 #mainarea{
 	width: 80%;
 	margin: 0px auto;

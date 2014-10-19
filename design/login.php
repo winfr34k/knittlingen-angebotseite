@@ -18,11 +18,24 @@
 		  });
 		</script>
 	
-	<title>Login - GVV</title>
+	<title>Adventsangebote - GVV</title>
 </head>
 <body>
 	<div id="mainarea">
 		<div id="header"></div>
+		
+		<div class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Angebote durchsuchen</a></li>
+              <li class="active"><a href="#">Login</a></li>
+              <li><a href="#">Impressum</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
 
 		<div id="content">
 			<h2>Login für Angebotsersteller</h2>

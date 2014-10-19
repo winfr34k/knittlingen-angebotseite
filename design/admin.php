@@ -18,14 +18,28 @@
 		  });
 		</script>
 	
-	<title>Administration - GVV</title>
+	<title>Adventsangebote - GVV</title>
 </head>
 <body>
 	<div id="mainarea">
 		<div id="header"></div>
+		
+		<div class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Administration</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#">Benutzerverwaltung</a></li>
+              <li class="active"><a href="#">Angebotsverwaltung</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
 
 		<div id="content">
-			<h3> Neues Angebot - %Loginname%</h3>
+			<h3>Neues Angebot - %Loginname%</h3>
 			<form>
 				<input type="text" class="form-control" placeholder="Angebotsname">
 				<input type="text" class="form-control" placeholder="Preis">
