@@ -24,6 +24,21 @@
 	<div id="mainarea">
 		<div id="header"></div>
 		
+		<div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Navigation</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Angebote durchsuchen</a></li>
+              <li><a href="#">Impressum</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
 		<div id="content">
 			<h2> <center>Weihnachtsangebote der Gewerbetreibenden in Knittlingen </center></h2>
 			<h4> <center>Arbeitsgruppe GVV Knittlingen 2020</center></h4>
