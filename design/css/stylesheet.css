@@ -20,7 +20,7 @@ html, body{
 }
 
 .content{
-	background: #E6E6E6;
+	background: #F2F2F2;
 	margin-top: 15px;
 	padding: 15px;
 	border-bottom-right-radius: 20px;
@@ -54,4 +54,8 @@ html, body{
 .lapse{
 	float: right; 
 	background: #C3C3C3;
+}
+
+.form-control{
+	margin-bottom: 2px;
 }

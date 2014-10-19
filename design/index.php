@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="de">
 <head>
-	<!--<meta charset="utf-8">-->
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/stylesheet.css">
@@ -26,35 +26,35 @@
 			<h2> <center>Weihnachtsangebote der Gewerbetreibenden in Knittlingen </center></h2>
 			<h4> <center>Arbeitsgruppe GVV Knittlingen 2020</center></h4>
 			<div id="accordion">
-			  <h3>20 Nüsse zum Preis von 10 </h3>
+			  <h3>20 NÃ¼sse zum Preis von 10 </h3>
 			  <div>
 				<div class="lapse">
-					Gültig bis 12:12 Uhr am 23.10.1999
+					GÃ¼ltig bis 12:12 Uhr am 23.10.1999
 				</div>
 				<div class="descripton">
-					Beschreibung, Beschreibung, Beschreibung, bablab jsdlöfjdasfkljdsf dsflj dsfkljdsf kjdfskljdsfdfs döksf dsf dsfdfas dfsdfsdfas dfs dfs ds dsklj dfsklj dfs dfs dfsdfs das fds fkjds flkjdsfkljasdöjsd fkljda följsd faj dasflkj dasflkjasdöfl kjasdölfj dkjas fölkj ölkdjasf jklsdjfa ölkjsdfl kjasfölksdfja lksdfjöolijbölkji sawöelji jsdöl fkjölsrfj3öliw fjklsd fjlsdkjf 
+					Beschreibung, Beschreibung, Beschreibung, bablab jsdljdasfkljdsf dsflj dsfkljdsf kjdfskljdsfdfs dksf dsf dsfdfas dfsdfsdfas dfs dfs ds dsklj dfsklj dfs dfs dfsdfs das fds fkjds flkjdsfkljasdjsd fkljda fljsd faj dasflkj dasflkjasdfl kjasdlfj dkjas flkj lkdjasf jklsdjfa lkjsdfl kjasflksdfja lksdfjolijbkji sawelji jsd fkjlsrfj3liw fjklsd fjlsdkjf 
 				</div>
 				<div class="firma">
 					<a href="#">Firma & Co KG</a>
 				</div>
 				<div class="price">
-					4242424€ inkl MwSt
+					424242â‚¬ inkl MwSt
 				</div>
 			  </div>
 			  
-			   <h3>14 Nüsse zum Preis von 4 </h3>
+			   <h3>14 NÃ¼sse zum Preis von 4 </h3>
 			  <div>
 				<div class="lapse">
-					Gültig bis 12:12 Uhr am 23.10.1999
+					GÃ¼ltig bis 12:12 Uhr am 23.10.1999
 				</div>
 				<div class="descripton">
-					Beschreibung, Beschreibung, Beschreibung, bablab jsdlöfjdasfkljdsf dsflj dsfkljdsf kjdfskljdsfdfs döksf dsf dsfdfas dfsdfsdfas dfs dfs ds dsklj dfsklj dfs dfs dfsdfs das fds fkjds flkjdsfkljasdöjsd fkljda följsd faj dasflkj dasflkjasdöfl kjasdölfj dkjas fölkj ölkdjasf jklsdjfa ölkjsdfl kjasfölksdfja lksdfjöolijbölkji sawöelji jsdöl fkjölsrfj3öliw fjklsd fjlsdkjf 
+					Beschreibung, Beschreibung, Beschreibung, bablab jsdlfjdasfkljdsf dsflj dsfkljdsf kjdfskljdsfdfs döksf dsf dsfdfas dfsdfsdfas dfs dfs ds dsklj dfsklj dfs dfs dfsdfs das fds fkjds flkjdsfkljasdöjsd fkljda följsd faj dasflkj dasflkjasdöfl kjasdölfj dkjas fölkj ölkdjasf jklsdjfa ölkjsdfl kjasfölksdfja lksdfjöolijbölkji sawöelji jsdöl fkjölsrfj3öliw fjklsd fjlsdkjf 
 				</div>
 				<div class="firma">
 					<a href="#">Firma & Co KG</a>
 				</div>
 				<div class="price">
-					4242424€ inkl MwSt
+					4242424â‚¬ inkl MwSt
 				</div>
 			  </div>
 			</div>
