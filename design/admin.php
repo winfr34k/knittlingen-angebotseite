@@ -49,7 +49,7 @@
 			</form>
 			
 			<h3>Eigene Angebote:</h3>
-			<table border="1" class="table table-striped">
+			<table class="table table-striped">
 				<tr>
 					<th class="offername">Angebotsname</th>
 					<th class="pricetable">Preis</th>
