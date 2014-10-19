@@ -1,0 +1,40 @@
+body{
+	width: 100%;
+	background-image: url(background.jpg);
+}
+
+#mainarea{
+	width: 80%;
+	margin: 0px auto;
+
+}
+
+.header{
+	background-image: url(http://www.gvv-knittlingen.de/sites/all/themes/gvv_theme/images/header.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #AA0174; 
+	height: 250px;
+	margin-top: 15px;
+}
+
+.opacityone{
+	opacity: 1;
+}
+
+.content{
+	background: #E6E6E6;
+	margin-top: 15px;
+	padding: 15px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px; 
+	border-right: 3px solid #A4A4A4;
+	-webkit-box-shadow: 0 1px 40px 0px #969696;
+	-moz-box-shadow: 0 1px 40px 0px #969696;
+	box-shadow: 0 1px 40px 0px #969696;
+	opacity: 0.8;
+}
+.muted{
+	color: #999;
+	text-align: right;
+}
