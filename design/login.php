@@ -18,28 +18,27 @@
 		<div class="navbar"
 		</div>
 		<div class="content">
+			<h2> Login Feld für Angebotsersteller<h2>
 			<form class="form-horizontal" role="form">
 			  <div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Benutzer</label>
 				<div class="col-sm-10">
-				  <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+				  <input type="text" class="form-control" id="inputEmail3" placeholder="Benutzer">
 				</div>
 			  </div>
 			  <div class="form-group">
 				<label for="inputPassword3" class="col-sm-2 control-label">Passwort</label>
 				<div class="col-sm-10">
-				  <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+				  <input type="password" class="form-control" id="inputPassword3" placeholder="Passwort">
 				</div>
 			  </div>
 			  <div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-				  <div class="checkbox">
-				  </div>
 				</div>
 			  </div>
 			  <div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-				  <button type="submit" class="btn btn-default">Sign in</button>
+				  <button type="submit" class="btn btn-default">Login</button>
 				</div>
 			  </div>
 			</form>
