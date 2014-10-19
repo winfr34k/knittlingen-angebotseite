@@ -19,6 +19,7 @@
 		</div>
 		<div class="content">
 			<h2> Login für Angebotsersteller</h2>
+			</br >
 			<form class="form-horizontal" role="form">
 			  <div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Benutzer</label>
