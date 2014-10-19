@@ -74,8 +74,6 @@
 			  </div>
 			</div>
 		</div>
-
-
 		<div id="muted">
 			Weihnachtsangebote des Gewerbe- und Verkehrsverein Knittlingen | <a href="/impressum.php"> Impressum</a>
 		</div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
 	<meta charset="utf-8">
@@ -38,7 +38,7 @@
       </div>
 
 		<div id="content">
-			<h2>Login f�r Angebotsersteller</h2>
+			<h3>Login für Firmen</h3>
 
 			<form class="form-horizontal" role="form">
 			  <div class="form-group">
@@ -64,10 +64,11 @@
 			  </div>
 			</form>
 		</div>
-	</div>
-   
 		<div id="muted">
 			Adventsangebote des Gewerbe- und Verkehrsverein Knittlingen | <a href="/impressum.php"> Impressum</a>
 		</div>
+	</div>
+   
+		
 </body>
 </html>

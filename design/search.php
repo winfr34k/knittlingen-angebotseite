@@ -38,12 +38,13 @@
       </div>
 
 		<div id="content">
-			<h2>Angebote durchsuchen</h2>
+			<h3>Angebote durchsuchen</h3>
 		</div>
-	</div>
-   
 		<div id="muted">
 			Adventsangebote des Gewerbe- und Verkehrsverein Knittlingen | <a href="/impressum.php"> Impressum</a>
 		</div>
+	</div>
+   
+		
 </body>
 </html>

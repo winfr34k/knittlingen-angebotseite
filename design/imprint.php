@@ -41,10 +41,11 @@
 			<h3> Impressum</h3>
 			
 		</div>
-	</div>
-   
 		<div id="muted">
 			Adventsangebote des Gewerbe- und Verkehrsverein Knittlingen | <a href="/impressum.php"> Impressum</a>
 		</div>
+	</div>
+   
+		
 </body>
 </html>
