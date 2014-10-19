@@ -18,7 +18,7 @@
 		<div class="navbar"
 		</div>
 		<div class="content">
-			<h2> Login Feld für Angebotsersteller<h2>
+			<h2> Login für Angebotsersteller<h2>
 			<form class="form-horizontal" role="form">
 			  <div class="form-group">
 				<label for="inputEmail3" class="col-sm-2 control-label">Benutzer</label>
