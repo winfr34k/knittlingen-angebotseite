@@ -64,14 +64,14 @@
 						<th>Loginname</th>
 						<th>Gewerbe</th>
 						<th>Webseite</th>
-						<th>Bearbeiten</th>
+						<th class="edit">Bearbeiten</th>
 					  </tr>
 					  <tr>
 						<td>Beispielfirma</td>
 						<td>Beispielname</td>
 						<td>BeispielGewerbe</td>
 						<td>BeispielWebseite</td>
-						<td><button class="btn btn-info"><span class="glyphicon glyphicon-edit"></span></button><button class="btn btn-danger icon-t"><span class="glyphicon glyphicon-trash"></span></button></td>
+						<td class="edit"><button class="btn btn-info"><span class="glyphicon glyphicon-edit"></span></button><button class="btn btn-danger icon-t"><span class="glyphicon glyphicon-trash"></span></button></td>
 					  </tr>
 				</table>
 		</div>

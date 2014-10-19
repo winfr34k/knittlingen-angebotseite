@@ -9,8 +9,9 @@ button{
 }
 
 textarea{ 
-  width: 100%;  
-  max-height: 500px;
+	width: 100%;
+	max-width: 100%;
+	max-height: 500px;
 }
 
 table{
@@ -74,4 +75,20 @@ div.navbar{
 
 .form-control{
 	margin-bottom: 8px;
+}
+
+.edit{
+	width: 110px;
+}
+
+.pricetable{
+	width: 70px;
+}
+
+.lapsetable{
+	width: 190px;
+}
+
+.offername{
+	width: 300px;
 }

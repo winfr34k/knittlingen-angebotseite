@@ -49,28 +49,29 @@
 			</form>
 			
 			<h3>Eigene Angebote:</h3>
-			<table class="table table-striped">
+			<table border="1" class="table table-striped">
 				<tr>
-					<th>Angebotsname</th>
-					<th>Preis</th>
-					<th>Gültig bis</th>
+					<th class="offername">Angebotsname</th>
+					<th class="pricetable">Preis</th>
+					<th class="lapsetable">Gültig bis</th>
 					<th>Beschreibung</th>
-					<th>Bearbeiten</th>
+					<th class="edit">Bearbeiten</th>
 				  </tr>
 				  <tr>
-					<td>Bsp</td>
+					<td class="offername">3 Karotten zum Preis von 4 </td>
+					<td class="pricetable">24,99€</td>
+					<td class="lapsetable">22:22 Uhr am 23.55.2993</td>
 					<td>Beispiel</td>
-					<td>Beispiel</td>
-					<td>Beispiel</td>
-					<td><button class="btn btn-info"><span class="glyphicon glyphicon-edit"></span></button><button class="btn btn-danger icon-t"><span class="glyphicon glyphicon-trash"></span></button></td>
+					<td class="edit"><button class="btn btn-info"><span class="glyphicon glyphicon-edit"></span></button><button class="btn btn-danger icon-t"><span class="glyphicon glyphicon-trash"></span></button></td>
 				  </tr>
 			</table>
 		</div>
-	</div>
-   
 		<div id="muted">
 			Adventsangebote des Gewerbe- und Verkehrsverein Knittlingen | <a href="/impressum.php"> Impressum</a>
 		</div>
+	</div>
+   
+
 </body>
 </html>
 
