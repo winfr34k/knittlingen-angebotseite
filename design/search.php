@@ -31,6 +31,7 @@
               <li><a href="index.php">Home</a></li>
               <li class="active"><a href="search.php">Angebote durchsuchen</a></li>
               <li><a href="login.php">Login</a></li>
+              <li><a href="admin.php">Adminbereich</a></li>
               <li><a href="imprint.php">Impressum</a></li>
             </ul>
           </div><!--/.nav-collapse -->
