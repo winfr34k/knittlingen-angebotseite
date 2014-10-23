@@ -27,6 +27,20 @@ Route::get('/', function()
 	$company->user_id = 1; //This defines the relation between user and company!
 	$company->save();*/
 
-	//Displaying the company of a user
-	return Company::find(1)->user;
+	/*//Creating an offer
+	$offer = new Offer();
+	$offer->name = 'Sonderangebot #2';
+	$offer->description = 'yadda yadda yadda...';
+	$offer->company_id = 1;
+	$offer->save();*/
+
+	//Showing the power of our relationship model: Finding all of one companies' offers, selecting the first and traverse down to the user
+	return Company::find(1)->offers->first()->company->user;
+
+	/*
+	 * Other Examples:
+	 * User::find(1)->offers;          - Select all the offers directly through the user
+	 * User::find(1)->company->offers; - Traverse from the user up to all the offers there are
+	 * Offer::find(1)->company; 	   - Find the company that posted the offer
+	 */
 });

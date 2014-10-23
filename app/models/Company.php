@@ -16,4 +16,12 @@ class Company extends Eloquent {
 	{
 		return $this->belongsTo('User');
 	}
+
+	/*
+	 * Adding a one-to-many relationship so we can get all the offers
+	 */
+	function offers()
+	{
+		return $this->hasMany('Offer');
+	}
 }
