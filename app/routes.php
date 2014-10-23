@@ -28,5 +28,5 @@ Route::get('/', function()
 	$company->save();*/
 
 	//Displaying the company of a user
-	return User::find(1)->company;
+	return Company::find(1)->user;
 });

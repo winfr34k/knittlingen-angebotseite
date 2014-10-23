@@ -9,4 +9,11 @@ class Company extends Eloquent {
 	 */
 	protected $table = 'companies';
 
+	/*
+	 * Making a reverse-relationship work with the users table
+	 */
+	function user()
+	{
+		return $this->belongsTo('User');
+	}
 }
