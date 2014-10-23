@@ -13,5 +13,20 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	/*//Creating a user
+	$user = new User();
+	$user->email = 'winfr34k@gmail.com';
+	$user->password = Hash::make('test123');
+	//$user->is_admin = true;
+	$user->save();*/
+
+	/*//Creating a company
+	$company = new Company();
+	$company->name = 'MRR PC-Service';
+	$company->website = 'mrauser.net';
+	$company->user_id = 1; //This defines the relation between user and company!
+	$company->save();*/
+
+	//Displaying the company of a user
+	return User::find(1)->company;
 });

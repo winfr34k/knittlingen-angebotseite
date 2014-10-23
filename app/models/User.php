@@ -23,4 +23,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password', 'remember_token');
 
+	/*
+	 * Adding hip relation for our companies so we can actually use it. One user has exactly one company.
+	 */
+	function company()
+	{
+		return $this->hasOne('Company');
+	}
+
 }
