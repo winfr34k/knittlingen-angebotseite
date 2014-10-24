@@ -16,7 +16,11 @@
 		  $(function() {
 			$( "#tabs" ).tabs();
 		  });
-		</script>
+
+      $(function() {
+      $( "#accordion" ).accordion();
+      });
+	</script>
 	
 	<title>Adventsangebote - GVV</title>
 </head>

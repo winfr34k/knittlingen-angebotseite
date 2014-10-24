@@ -18,30 +18,32 @@ Route::get('/', function()
 	$user->email = 'winfr34k@gmail.com';
 	$user->password = Hash::make('test123');
 	//$user->is_admin = true;
-	$user->save();*/
+	$user->save();
 
-	/*//Creating a company
+	//Creating a company
 	$company = new Company();
 	$company->name = 'MRR PC-Service';
 	$company->website = 'mrauser.net';
 	$company->user_id = 1; //This defines the relation between user and company!
-	$company->save();*/
+	$company->save();
 
-	/*//Creating an offer
+	//Adding a category
+	$category = new Category();
+	$category->name = 'Tests';
+	$category->save();
+
+	//Creating an offer
 	$offer = new Offer();
 	$offer->name = 'Sonderangebot #2';
 	$offer->description = 'yadda yadda yadda...';
 	$offer->company_id = 1;
-	$offer->save();*/
-
-	/*//Adding a category
-	$category = new Category();
-	$category->name = 'Tests';
-	$category->save();*/
-
-	/*//Changing an offer so it has a category
-	$offer = Offer::find(1);
 	$offer->category_id = 1;
+	$offer->amount = 300.00;
+	$offer->save();
+
+	//Changing an offer so it actually has a Euro-amount
+	$offer = Offer::find(1);
+	$offer->amount = 300.00;
 	$offer->save();*/
 
 	/*
@@ -56,5 +58,21 @@ Route::get('/', function()
 	 * Offer::find(1)->category        - Show the category that belongs ot an offer
 	 */
 
-	return Offer::find(1)->category;
+	/*$offer = new Offer();
+	$offer->name = 'Test';
+	$offer->description = 'Dies ist ein Test.';
+	$offer->company_id = 1;
+	$offer->category_id = 1;
+	$offer->amount = 20.00;
+	$offer->save();*/
+
+
+	return View::make('frontend.home', array('title' => "Home", 'offers' => Offer::all()));
+});
+
+Route::resource('offers', 'OffersController');
+
+Route::get('/imprint', function() 
+{
+	return View::make('frontend.imprint', array('title' => 'Impressum'));
 });

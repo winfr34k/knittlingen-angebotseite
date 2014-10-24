@@ -14,7 +14,7 @@ class AddForeignRelationships extends Migration {
 	{
 		Schema::table('companies', function($table)
 		{
-		    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');;
+		    $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 		});
 		Schema::table('offers', function($table)
 		{

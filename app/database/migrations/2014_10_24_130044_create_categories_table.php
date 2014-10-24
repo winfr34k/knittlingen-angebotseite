@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoryTable extends Migration {
+class CreateCategoriesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -22,7 +22,7 @@ class CreateCategoryTable extends Migration {
 		//Changing the offers table so we get to have a foreign key relation ship
 		Schema::table('offers', function($table)
 		{
-			$table->integer('category_id')->after('company_id');
+			$table->integer('category_id')->unsigned()->after('company_id');
 		});
 	}
 
