@@ -16,4 +16,12 @@ class Offer extends Eloquent {
 	{
 		return $this->belongsTo('Company');
 	}
+
+	/*
+	 * Adding a reverse-relationship to the categories
+	 */
+	function category()
+	{
+		return $this->belongsTo('Category');
+	}
 }

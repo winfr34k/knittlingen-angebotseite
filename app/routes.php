@@ -34,13 +34,27 @@ Route::get('/', function()
 	$offer->company_id = 1;
 	$offer->save();*/
 
-	//Showing the power of our relationship model: Finding all of one companies' offers, selecting the first and traverse down to the user
-	return Company::find(1)->offers->first()->company->user;
+	/*//Adding a category
+	$category = new Category();
+	$category->name = 'Tests';
+	$category->save();*/
+
+	/*//Changing an offer so it has a category
+	$offer = Offer::find(1);
+	$offer->category_id = 1;
+	$offer->save();*/
 
 	/*
+	 * Showing the power of our relationship model: Finding all of one companies' offers, selecting the first and traverse down to the user
+	 * return Company::find(1)->offers->first()->company->user;
+	 * 
 	 * Other Examples:
 	 * User::find(1)->offers;          - Select all the offers directly through the user
 	 * User::find(1)->company->offers; - Traverse from the user up to all the offers there are
-	 * Offer::find(1)->company; 	   - Find the company that posted the offer
+	 * Offer::find(1)->company; 	     - Find the company that posted the offer
+	 * Category::find(1)->offers;			 - Show all the offers that are in one category
+	 * Offer::find(1)->category        - Show the category that belongs ot an offer
 	 */
+
+	return Offer::find(1)->category;
 });
