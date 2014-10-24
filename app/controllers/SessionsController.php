@@ -3,24 +3,18 @@
 class SessionsController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-
-	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
 	 */
 	public function create()
 	{
-		//
+		if( ! Auth::guest())
+		{
+			return Redirect::to('/');
+		}
+
+		return View::make('frontend.login', array('title' => 'Login'));
 	}
 
 
@@ -31,55 +25,27 @@ class SessionsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
-	}
+		$validator = Validator::make(Input::only('email', 'password'), array('email' => 'required', 'password' => 'required'));
 
+		if(Auth::attempt(Input::only('email', 'password')))
+		{
+			return Redirect::back();
+		}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
+		return Redirect::back()->withInput()->withErrors($validator->messages());
 	}
 
 
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy()
 	{
-		//
+		Auth::logout();
+
+		return Redirect::to('/login')->with('success', 'Sie haben sich erfolgreich ausgeloggt!');
 	}
 
 
