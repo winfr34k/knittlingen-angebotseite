@@ -19,6 +19,7 @@
     <div class="price">
       {{ $offer->amount }}€ inkl. MwSt
     </div>
+    <div style="clear: both; font-weight: bold;">{{ link_to_route('offers.show', 'Zum Angebot &raquo;', $offer->id) }}</div>
   </div>
   @endforeach
 </div>
