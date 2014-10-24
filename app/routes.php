@@ -19,7 +19,7 @@ Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
 Route::resource('session', 'SessionsController');
 
-Route::resource('offers', 'OffersController');
+Route::get('admin', 'AdminController@index');
 
 Route::get('/imprint', function() 
 {
