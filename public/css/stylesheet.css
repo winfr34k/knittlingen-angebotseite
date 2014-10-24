@@ -1,0 +1,94 @@
+html, body{
+	width: 100%;
+	height: 100%;
+	background: url(../images/background.png);
+}
+
+button{
+	margin-left: 5px;
+}
+
+textarea{ 
+	width: 100%;
+	max-width: 100%;
+	max-height: 500px;
+}
+
+table{
+	background: #F0F0F0;
+}
+
+div.navbar{
+	margin: 0px auto;
+	border-radius: 0px;
+}
+
+#mainarea{
+	width: 80%;
+	margin: 0px auto;
+
+}
+
+#header{
+	height: 250px;
+	background: url(../images/header.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #AA0174; 
+}
+
+#content{
+	background: rgba(242, 242, 242, 0.9);
+	padding: 15px;
+	border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px; 
+	border-right: 3px solid #A4A4A4;
+	-webkit-box-shadow: 0 1px 40px 0px #969696;
+	-moz-box-shadow: 0 1px 40px 0px #969696;
+	box-shadow: 0 1px 40px 0px #969696;
+}
+#muted{
+	color: #999;
+	text-align: right;
+}
+
+.angebot{}
+
+.description{
+	float: left;
+}
+
+.company{
+	float: left;
+	background: #BDDFEB;
+}
+
+.price{
+	float: right;
+	background: #A9F5A9;
+}
+
+.lapse{
+	float: right; 
+	background: #C3C3C3;
+}
+
+.form-control{
+	margin-bottom: 8px;
+}
+
+.edit{
+	width: 110px;
+}
+
+.pricetable{
+	width: 70px;
+}
+
+.lapsetable{
+	width: 190px;
+}
+
+.offername{
+	width: 300px;
+}
