@@ -39,7 +39,7 @@ class SessionsController extends \BaseController {
 			}
 			else
 			{
-				return Redirect::back()->withInput()->withErrors(array('invalid' => 'Die Logindaten existieren nicht!'));
+				return Redirect::back()->withInput()->withErrors(array('invalidCredentials' => 'Die Logindaten existieren nicht!'));
 			}
 		}
 
