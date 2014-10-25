@@ -31,6 +31,8 @@ Route::get('admin', 'MiscController@acp');
 Route::resource('companies', 'CompaniesController');
 
 //Users (only used for database-exchange)
+Route::put('users/updatePassword/{id}', 'UsersController@updatePassword');
+Route::put('users/updateEmail/{id}', 'UsersController@updateEmail');
 Route::resource('users', 'UsersController');
 
 //Categories (only used for database-exchange)

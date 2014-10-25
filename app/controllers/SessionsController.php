@@ -46,7 +46,6 @@ class SessionsController extends \BaseController {
 		
 	}
 
-
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -56,7 +55,10 @@ class SessionsController extends \BaseController {
 	{
 		Auth::logout();
 
-		return Redirect::to('/login')->with('success', 'Sie haben sich erfolgreich ausgeloggt!');
+		if(!Session::get('success'))
+			return Redirect::to('/login')->with('success', 'Sie haben sich erfolgreich ausgeloggt!');
+		
+		return Redirect::to('/login')->with('success', Session::get('success'));
 	}
 
 
