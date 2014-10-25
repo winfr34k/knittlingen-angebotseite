@@ -1,3 +1,4 @@
+
 <?php
 
 class DatabaseSeeder extends Seeder {
@@ -20,7 +21,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CategoryTableSeeder');
 		$this->command->info('Category table seeded!');
 
-		$this->call('SettingsTableSeeder');
+		$this->call('SettingTableSeeder');
 		$this->command->info('User table seeded!');
 	}
 
