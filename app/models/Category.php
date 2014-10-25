@@ -9,6 +9,8 @@ class Category extends Eloquent {
    */
   protected $table = 'categories';
 
+  protected $fillable = array('name');
+
   function offers()
   {
     return $this->hasMany('Offer');

@@ -9,6 +9,8 @@ class Company extends Eloquent {
 	 */
 	protected $table = 'companies';
 
+	protected $fillable = array('name', 'website');
+
 	/*
 	 * Making a reverse-relationship work with the users table
 	 */

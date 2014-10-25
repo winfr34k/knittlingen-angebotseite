@@ -48,6 +48,14 @@
       </div>
 
     <div id="content">
+      @if(isset($errors) && count($errors) > 0)
+        @foreach($errors->all() as $error)
+        <p class="alert alert-danger"><b>Fehler:</b> {{ $error }}</p>
+        @endforeach
+      @endif
+      @if(Session::get('success'))
+        <p class="alert alert-success"><b>Erfolg:</b> {{ Session::get('success') }}</p>
+      @endif
       @yield('content')
     </div>
     <div id="muted">
