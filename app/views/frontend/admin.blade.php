@@ -31,6 +31,7 @@
       {{ Form::text('amount', '', array('class' => 'form-control', 'placeholder' => 'Preis')) }}
       {{ Form::text('startDate', '', array('class' => 'form-control date', 'placeholder' => 'Gültig von')) }}
       {{ Form::text('endDate', '', array('class' => 'form-control date', 'placeholder' => 'Gültig bis')) }}
+      <span><b>Kategorie:</b> {{ Form::select('category_id', Category::all()->lists('name', 'id'), null, array('class' => 'form-control')) }}</span>
       {{ Form::textarea('description', '', array('rows' => '5', 'class' => 'form-control', 'placeholder' => 'Beschreibung')) }}
       {{ Form::submit('Angebot anlegen', array('class' => 'btn btn-primary')) }}
     {{ Form::close() }}
@@ -134,8 +135,7 @@
       {{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password'))}}
       {{ Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'Firmenname')) }}
       {{ Form::text('website', '', array('class' => 'form-control', 'placeholder' => 'Website')) }}
-      <span class="form-control">Admin?: {{ Form::checkbox('is_admin', true) }}</span>
-      <br />
+      <div class="checkbox"><label>{{ Form::checkbox('is_admin', true) }} Administrator</label></div>
       {{ Form::submit('Nutzer anlegen', array('class' => 'btn btn-primary')) }}
     {{ Form::close() }}
 

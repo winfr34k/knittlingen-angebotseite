@@ -9,6 +9,8 @@ class Offer extends Eloquent {
 	 */
 	protected $table = 'offers';
 
+	protected $fillable = array('name', 'description', 'startDate', 'endDate', 'amount', 'category_id');
+
 	/*
 	 * Making a reverse-relationship work with the companies table
 	 */
