@@ -36,7 +36,7 @@ class OffersController extends \BaseController {
 	 */
 	public function store()
 	{
-		$input = Input::only('name', 'description', 'amount', 'category_id');
+		$input = Input::only('name', 'description', 'amount', 'category_id', 'startDate', 'endDate');
 		$validator = Validator::make($input, array('name' => 'required', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
 
 		if($validator->fails())
@@ -49,6 +49,8 @@ class OffersController extends \BaseController {
 			$offer->name = $input['name'];
 			$offer->description = $input['description'];
 			$offer->amount = $this->floatvalue($input['amount']);
+			$offer->startDate = $input['startDate'];
+			$offer->endDate = $input['endDate'];
 			$offer->company_id = Auth::user()->company->id;
 			$offer->category_id = $input['category_id'];
 			if($offer->save())
@@ -107,7 +109,7 @@ class OffersController extends \BaseController {
 	{
 		$offer = Offer::find($id);
 
-		$input = Input::only('name', 'description', 'amount', 'category_id');	
+		$input = Input::only('name', 'description', 'amount', 'category_id', 'startDate', 'endDate');	
 		$validator = Validator::make($input, array('name' => 'required', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
 
 		if($validator->fails())
@@ -120,6 +122,8 @@ class OffersController extends \BaseController {
 			$offer->name = $input['name'];
 			$offer->description = $input['description'];
 			$offer->amount = $this->floatvalue($input['amount']);
+			$offer->startDate = $input['startDate'];
+			$offer->endDate = $input['endDate'];
 			$offer->category_id = $input['category_id'];
 			if($offer->save())
 			{
