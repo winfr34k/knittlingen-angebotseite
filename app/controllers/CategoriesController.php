@@ -31,7 +31,26 @@ class CategoriesController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input = Input::only('name');
+		$validator = Validator::make($input, array('name' => 'required|unique:categories'));
+
+		if($validator->fails())
+		{
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+		else
+		{
+			$category = new Category();
+			$category->name = $input['name'];
+			if($category->save())
+			{
+				return Redirect::back()->with(array('success' => 'Die Kategorie wurde erfolgreich angelegt.'));
+			}
+			else
+			{
+				return Redirect::back()->withErrors(array('unknownError', 'Es ist ein unbekannter Fehler aufgetreten.'));
+			}
+		}
 	}
 
 
@@ -55,7 +74,14 @@ class CategoriesController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$category = Category::find($id);
+
+		$input = array(
+			'id' => $category->id,
+			'name' => $category->name,
+		);
+
+		return Redirect::back()->withInput($input);
 	}
 
 
@@ -67,7 +93,27 @@ class CategoriesController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$category = Category::find($id);
+
+		$input = Input::only('name');	
+		$validator = Validator::make($input, array('name' => 'required|unique:categories'));
+
+		if($validator->fails())
+		{
+			$input['id'] = $category->id;
+			return Redirect::back()->withInput($input)->withErrors($validator);
+		}
+		else
+		{
+			$category->name = $input['name'];
+			if($category->save())
+			{
+				return Redirect::back()->with(array('success' => 'Die Kategorie wurde erfolgreich bearbeitet!'));	
+			}
+
+			$input['id'] = $category->id;
+			return Redirect::back()->withInput($input)->withErrors(array('unknownError' => 'Es ist ein unbkeannter Fehler aufgetreten.'));	
+		}
 	}
 
 
@@ -79,7 +125,10 @@ class CategoriesController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$category = Category::find($id);
+		$category->delete();
+
+		return Redirect::back()->with(array('success' => 'Die Kategorie wurde erfolgreich gelöscht.'));
 	}
 
 
