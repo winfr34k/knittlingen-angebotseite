@@ -1,6 +1,6 @@
 <?php
 
-class OffersController extends \BaseController {
+class CompaniesController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,12 +9,7 @@ class OffersController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('frontend.home', array('title' => "Home", 'offers' => Offer::all()));
-	}
-
-	public function search($keywords = '') 
-	{
-		return View::make('frontend.search', array('title' => 'Angebote durchsuchen'));
+		//
 	}
 
 
@@ -36,7 +31,7 @@ class OffersController extends \BaseController {
 	 */
 	public function store()
 	{
-		return Input::all();
+		//
 	}
 
 
@@ -48,7 +43,7 @@ class OffersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return View::make('frontend.offer', array('title' => "Home", 'offer' => Offer::find($id)));
+		//
 	}
 
 

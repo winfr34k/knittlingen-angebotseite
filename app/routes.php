@@ -15,6 +15,14 @@ Route::get('/', 'OffersController@index');
 Route::get('offers/search', 'OffersController@search');
 Route::resource('offers', 'OffersController');
 
+Route::resource('companies', 'CompaniesController');
+
+Route::resource('users', 'UsersController');
+
+Route::resource('categories', 'CategoriesController');
+
+Route::resource('settings', 'SettingsController');
+
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
 Route::resource('session', 'SessionsController');
