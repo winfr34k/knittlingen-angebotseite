@@ -12,6 +12,7 @@
   <script src="/js/jquery.js"></script>
   <script src="/js/jquery-ui.js"></script>
   <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/jquery-ui-i18n.min.js"></script>
   <script>
       $(function() {
       $( "#tabs" ).tabs();

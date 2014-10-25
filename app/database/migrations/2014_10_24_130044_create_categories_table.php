@@ -22,7 +22,7 @@ class CreateCategoriesTable extends Migration {
 		//Changing the offers table so we get to have a foreign key relation ship
 		Schema::table('offers', function($table)
 		{
-			$table->integer('category_id')->unsigned()->after('company_id');
+			$table->integer('category_id')->unsigned()->after('company_id')->default(1);
 		});
 	}
 

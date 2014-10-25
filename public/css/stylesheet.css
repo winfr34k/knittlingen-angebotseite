@@ -18,6 +18,10 @@ table{
 	background: #F0F0F0;
 }
 
+td.edit form{
+	float: left;
+}
+
 div.navbar{
 	margin: 0px auto;
 	border-radius: 0px;
