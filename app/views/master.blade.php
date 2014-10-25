@@ -33,7 +33,7 @@
         <div class="container-fluid">
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li @if($title == 'Home') class="active" @endif><a href="/">Home</a></li>
+              <li @if($title == 'Home' || starts_with($title, 'Angebot:')) class="active" @endif><a href="/">Home</a></li>
               <li @if($title == 'Angebote durchsuchen') class="active" @endif><a href="/offers/search">Angebote durchsuchen</a></li>
               @if(Auth::guest())
               <li @if($title == 'Login') class="active" @endif><a href="/login">Login</a></li>

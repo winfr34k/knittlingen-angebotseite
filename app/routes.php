@@ -11,25 +11,30 @@
 |
 */
 
-Route::get('/', 'OffersController@index');
-Route::get('offers/search', 'OffersController@search');
-Route::resource('offers', 'OffersController');
-
-Route::resource('companies', 'CompaniesController');
-
-Route::resource('users', 'UsersController');
-
-Route::resource('categories', 'CategoriesController');
-
-Route::resource('settings', 'SettingsController');
-
+//Login & Session
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
 Route::resource('session', 'SessionsController');
 
-Route::get('admin', 'AdminController@index');
+//Offers
+Route::get('/', 'OffersController@index');
+Route::get('offers/search', 'OffersController@search');
+Route::resource('offers', 'OffersController');
 
-Route::get('/imprint', function() 
-{
-	return View::make('frontend.imprint', array('title' => 'Impressum'));
-});
+//Imprint
+Route::get('/imprint', 'MiscController@imprint');
+
+//ACP (only used for display)
+Route::get('admin', 'MiscController@acp');
+
+//Companies (only used for database-exchange)
+Route::resource('companies', 'CompaniesController');
+
+//Users (only used for database-exchange)
+Route::resource('users', 'UsersController');
+
+//Categories (only used for database-exchange)
+Route::resource('categories', 'CategoriesController');
+
+//Settings (only used for database-exchange)
+Route::resource('settings', 'SettingsController');

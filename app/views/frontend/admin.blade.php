@@ -55,8 +55,8 @@
           @foreach(Auth::user()->offers as $offer)
           <tr>
             <td class="offername">{{ $offer->name }}</td>
-            <td class="pricetable">{{ $offer->amount }}€</td>
-            <td class="lapsetable">{{ $offer->endDate }}</td>
+            <td class="pricetable">{{ number_format($offer->amount, 2, ',', '.') }}€</td>
+            <td class="lapsetable">{{ date_format(date_create_from_format('Y-m-d H:i:s', $offer->endDate), 'd.m.Y H:i') }}</td>
             <td>{{ $offer->description }}</td>
             <td>{{ $offer->category->name }}</td>
             <td class="edit">
@@ -205,7 +205,7 @@
             <td>{{ $setting->id }}</td>
             <td>{{ $setting->name }}</td>
             <td>{{ $setting->value }}</td>
-            <td>{{ $setting->updated_at }}</td>
+            <td>{{ date_format(date_create_from_format('Y-m-d H:i:s', $setting->updated_at), 'd.m.Y H:i') }}</td>
             <td class="edit">
               {{ Form::open(array('route' => 'settings.edit')) }}
                 {{ Form::button('<span class="glyphicon glyphicon-edit"></span>', array('type' => 'submit', 'class' => 'btn btn-info')) }}

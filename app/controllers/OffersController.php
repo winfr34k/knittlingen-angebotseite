@@ -71,7 +71,8 @@ class OffersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return View::make('frontend.offer', array('title' => "Home", 'offer' => Offer::find($id)));
+		$offer = Offer::find($id);
+		return View::make('frontend.offer', array('title' => 'Angebot: '.$offer->name, 'offer' => $offer));
 	}
 
 
@@ -88,7 +89,7 @@ class OffersController extends \BaseController {
 		$input = array(
 			'id' => $offer->id,
 			'name' => $offer->name,
-			'amount' => $offer->amount,
+			'amount' => number_format($offer->amount, 2, ',', '.'),
 			'startDate' => $offer->startDate,
 			'endDate' => $offer->endDate,
 			'category_id' => $offer->category_id,
