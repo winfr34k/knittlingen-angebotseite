@@ -25,15 +25,20 @@
       });
     });
     </script>
+    @if(count(Input::old()) > 0)
+    <h3>Angebot ändern:</h3>
+    {{ Form::open(array('route' => array('offers.update', Input::old('id')), 'method' => 'put')) }}
+    @else
     <h3>Neues Angebot anlegen - {{ Auth::user()->company->name }}</h3>
     {{ Form::open(array('route' => 'offers.store')) }}
+    @endif
       {{ Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'Angebotsname')) }}
       {{ Form::text('amount', '', array('class' => 'form-control', 'placeholder' => 'Preis')) }}
       {{ Form::text('startDate', '', array('class' => 'form-control date', 'placeholder' => 'Gültig von')) }}
       {{ Form::text('endDate', '', array('class' => 'form-control date', 'placeholder' => 'Gültig bis')) }}
       <span><b>Kategorie:</b> {{ Form::select('category_id', Category::all()->lists('name', 'id'), null, array('class' => 'form-control')) }}</span>
       {{ Form::textarea('description', '', array('rows' => '5', 'class' => 'form-control', 'placeholder' => 'Beschreibung')) }}
-      {{ Form::submit('Angebot anlegen', array('class' => 'btn btn-primary')) }}
+      {{ Form::submit('Speichern', array('class' => 'btn btn-primary')) }}
     {{ Form::close() }}
 
     <h3>Erstellte Angebote:</h3>
@@ -43,6 +48,7 @@
         <th class="pricetable">Preis</th>
         <th class="lapsetable">Gültig bis</th>
         <th>Beschreibung</th>
+        <th>Kategorie</th>
         <th class="edit">Bearbeiten</th>
         </tr>
         @if(count(Auth::user()->offers) > 0)
@@ -52,19 +58,20 @@
             <td class="pricetable">{{ $offer->amount }}€</td>
             <td class="lapsetable">{{ $offer->endDate }}</td>
             <td>{{ $offer->description }}</td>
+            <td>{{ $offer->category->name }}</td>
             <td class="edit">
-              {{ Form::open(array('route' => 'offers.edit')) }}
+              {{ Form::open(array('route' => array('offers.edit', $offer->id), 'method' => 'get')) }}
                 {{ Form::button('<span class="glyphicon glyphicon-edit"></span>', array('type' => 'submit', 'class' => 'btn btn-info')) }}
               {{ Form::close() }}
-              {{ Form::open(array('route' => 'offers.destroy')) }}
-                {{ Form::button('<span class="glyphicon glyphicon-trash"></span>', array('type' => 'submit', 'class' => 'btn btn-danger')) }}
+              {{ Form::open(array('route' => array('offers.destroy', $offer->id), 'method' => 'delete')) }}
+                {{ Form::button('<span class="glyphicon glyphicon-trash"></span>', array('type' => 'submit', 'name' => 'delete', 'value' => $offer->id, 'class' => 'btn btn-danger')) }}
               {{ Form::close() }}
             </td>
           </tr>
           @endforeach
         @else
         <tr>
-          <td colspan="5"><center><i>-- Es sind keine Angebote verfügbar --</i></center></td>
+          <td colspan="6"><center><i>-- Es sind keine Angebote verfügbar --</i></center></td>
         </tr>
         @endif
     </table>

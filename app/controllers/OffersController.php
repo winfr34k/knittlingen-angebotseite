@@ -2,6 +2,17 @@
 
 class OffersController extends \BaseController {
 
+	private function floatvalue($strValue) 
+	{ 
+	   $floatValue = preg_replace("/(^[0-9]*)(\\.|,)([0-9]*)(.*)/", "\\1.\\3", $strValue); 
+
+	   if (!is_numeric($floatValue)) $floatValue = preg_replace("/(^[0-9]*)(.*)/", "\\1", $strValue); 
+	   if (!is_numeric($floatValue)) $floatValue = 0; 
+
+	   return $floatValue; 
+  	} 
+
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -19,24 +30,34 @@ class OffersController extends \BaseController {
 
 
 	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-
-	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
 	 */
 	public function store()
 	{
-		return Input::all();
+		$input = Input::only('name', 'description', 'amount', 'category_id');
+		$validator = Validator::make($input, array('name' => 'required', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
+
+		if($validator->fails())
+		{
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+		else
+		{
+			$offer = new Offer();
+			$offer->name = $input['name'];
+			$offer->description = $input['description'];
+			$offer->amount = $this->floatvalue($input['amount']);
+			$offer->company_id = Auth::user()->company->id;
+			$offer->category_id = $input['category_id'];
+			if($offer->save())
+			{
+				return Redirect::back()->with(array('success' => 'Das Angebot wurde erfolgreich erstellt!'));	
+			}
+
+			return Redirect::back()->withInput()->withErrors(array('unknownError' => 'Unbekannter Fehler'));		
+		}
 	}
 
 
@@ -60,7 +81,19 @@ class OffersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$offer = Offer::find($id);
+
+		$input = array(
+			'id' => $offer->id,
+			'name' => $offer->name,
+			'amount' => $offer->amount,
+			'startDate' => $offer->startDate,
+			'endDate' => $offer->endDate,
+			'category_id' => $offer->category_id,
+			'description' => $offer->description
+		);
+
+		return Redirect::back()->withInput($input);
 	}
 
 
@@ -72,7 +105,30 @@ class OffersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$offer = Offer::find($id);
+
+		$input = Input::only('name', 'description', 'amount', 'category_id');	
+		$validator = Validator::make($input, array('name' => 'required', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
+
+		if($validator->fails())
+		{
+			$input['id'] = $offer->id;
+			return Redirect::back()->withInput($input)->withErrors($validator);
+		}
+		else
+		{
+			$offer->name = $input['name'];
+			$offer->description = $input['description'];
+			$offer->amount = $this->floatvalue($input['amount']);
+			$offer->category_id = $input['category_id'];
+			if($offer->save())
+			{
+				return Redirect::back()->with(array('success' => 'Das Angebot wurde erfolgreich bearbeitet!'));	
+			}
+
+			$input['id'] = $offer->id;
+			return Redirect::back()->withInput($input)->withErrors(array('unknownError' => 'Unbekannter Fehler'));		
+		}
 	}
 
 
@@ -84,8 +140,10 @@ class OffersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
-	}
+		$offer = Offer::find($id);
+		$offer->delete();
 
+		return Redirect::back()->with(array('success' => 'Das Angebot wurde erfolgreich gelöscht.'));
+	}
 
 }
