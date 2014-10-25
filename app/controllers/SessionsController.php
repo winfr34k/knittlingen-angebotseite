@@ -31,8 +31,19 @@ class SessionsController extends \BaseController {
 		{
 			return Redirect::back();
 		}
+		else
+		{
+			if($validator->fails())
+			{
+				return Redirect::back()->withInput()->withErrors($validator);
+			}
+			else
+			{
+				return Redirect::back()->withInput()->withErrors(array('invalid' => 'Die Logindaten existieren nicht!'));
+			}
+		}
 
-		return Redirect::back()->withInput()->withErrors($validator->messages());
+		
 	}
 
 
