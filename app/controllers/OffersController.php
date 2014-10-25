@@ -58,7 +58,7 @@ class OffersController extends \BaseController {
 				return Redirect::back()->with(array('success' => 'Das Angebot wurde erfolgreich erstellt!'));	
 			}
 
-			return Redirect::back()->withInput()->withErrors(array('unknownError' => 'Unbekannter Fehler'));		
+			return Redirect::back()->withInput()->withErrors(array('unknownError' => 'Es ist ein unbekannter Fehler aufgetreten.'));		
 		}
 	}
 
@@ -132,7 +132,7 @@ class OffersController extends \BaseController {
 			}
 
 			$input['id'] = $offer->id;
-			return Redirect::back()->withInput($input)->withErrors(array('unknownError' => 'Unbekannter Fehler'));		
+			return Redirect::back()->withInput($input)->withErrors(array('unknownError' => 'Es ist ein unbekannter Fehler aufgetreten.'));
 		}
 	}
 

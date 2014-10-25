@@ -8,5 +8,7 @@ class Setting extends Eloquent {
 	 * @var string
 	 */
 	protected $table = 'settings';
+
+	protected $fillable = array('name', 'value');
 	
 }

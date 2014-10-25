@@ -189,11 +189,16 @@
     </table>
   </div>
   <div id="settings">
+    @if(count(Input::old()) > 0)
+    <h3>Systemeinstellung ändern:</h3>
+    {{ Form::open(array('route' => array('settings.update', Input::old('id')), 'method' => 'put')) }}
+    @else
     <h3>Systemeinstellungen:</h3>
-    {{ Form::open(array('route' => 'settings.update')) }}
+    {{ Form::open(array('route' => 'settings.store')) }}
+    @endif
       {{ Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'Einstellung')) }}
       {{ Form::text('value', '', array('class' => 'form-control', 'placeholder' => 'Wert')) }}
-      {{ Form::submit('Einstellungen speichern', array('class' => 'btn btn-primary')) }}
+      {{ Form::submit('Speichern', array('class' => 'btn btn-primary')) }}
     {{ Form::close() }}
     <br />
     <table class="table table-striped">
@@ -212,9 +217,14 @@
             <td>{{ $setting->value }}</td>
             <td>{{ date_format(date_create_from_format('Y-m-d H:i:s', $setting->updated_at), 'd.m.Y H:i') }}</td>
             <td class="edit">
-              {{ Form::open(array('route' => 'settings.edit')) }}
+              {{ Form::open(array('route' => array('settings.edit', $setting->id), 'method' => 'get')) }}
                 {{ Form::button('<span class="glyphicon glyphicon-edit"></span>', array('type' => 'submit', 'class' => 'btn btn-info')) }}
               {{ Form::close() }}
+              @if($setting->id != 1 && $setting->id != 2)
+              {{ Form::open(array('route' => array('settings.destroy', $setting->id), 'method' => 'delete')) }}
+                {{ Form::button('<span class="glyphicon glyphicon-trash"></span>', array('type' => 'submit', 'name' => 'delete', 'value' => $setting->id, 'class' => 'btn btn-danger')) }}
+              {{ Form::close() }}
+              @endif
             </td>
           </tr>
           @endforeach

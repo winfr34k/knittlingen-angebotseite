@@ -31,7 +31,25 @@ class SettingsController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input = Input::only('name', 'value');
+		$validator = Validator::make($input, array('name' => 'required|unique:settings', 'value' => 'required'));
+
+		if($validator->fails())
+		{
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+		else
+		{
+			$setting = new Setting();
+			$setting->name = $input['name'];
+			$setting->value = $input['value'];
+			if($setting->save())
+			{
+				return Redirect::back()->with(array('success' => 'Die Einstellung wurde erfolgreich erstellt!'));	
+			}
+
+			return Redirect::back()->withInput()->withErrors(array('unknownError' => 'Es ist ein unbekannter Fehler aufgetreten.'));	
+		}
 	}
 
 
@@ -55,7 +73,15 @@ class SettingsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$setting = Setting::find($id);
+
+		$input = array(
+			'id' => $setting->id,
+			'name' => $setting->name,
+			'value' => $setting->value
+		);
+
+		return Redirect::back()->withInput($input);
 	}
 
 
@@ -67,7 +93,28 @@ class SettingsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$setting = Setting::find($id);
+
+		$input = Input::only('name', 'value');	
+		$validator = Validator::make($input, array('name' => 'required', 'value' => 'required'));
+
+		if($validator->fails())
+		{
+			$input['id'] = $setting->id;
+			return Redirect::back()->withInput($input)->withErrors($validator);
+		}
+		else
+		{
+			$setting->name = $input['name'];
+			$setting->value = $input['value'];
+			if($setting->save())
+			{
+				return Redirect::back()->with(array('success' => 'Die Einstellung wurde erfolgreich geändert!'));	
+			}
+
+			$input['id'] = $setting->id;
+			return Redirect::back()->withInput($input)->withErrors(array('unknownError' => 'Es ist ein unbekannter Fehler aufgetreten.'));
+		}
 	}
 
 
@@ -79,7 +126,10 @@ class SettingsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$setting = Setting::find($id);
+		$setting->delete();
+
+		return Redirect::back()->with(array('success' => 'Die Einstellung wurde erfolgreich gelöscht.'));
 	}
 
 
