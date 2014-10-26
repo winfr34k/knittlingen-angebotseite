@@ -36,10 +36,10 @@
   <title>{{ $title }} | GVV-Angebotsseite</title>
 </head>
 <body>
-  <div id="mainarea container">
+  <div id="mainarea">
     <div id="header"></div>
     
-    <div class="navbar navbar-inverse container" role="navigation">
+    <div class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
