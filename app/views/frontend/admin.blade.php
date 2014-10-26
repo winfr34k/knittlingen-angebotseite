@@ -25,7 +25,7 @@
       });
     });
     </script>
-    @if(count(Input::old()) > 0)
+    @if(count(Input::old()) > 0 && Input::old('id') && Input::old('type') == 'offer')
     <h3>Angebot ändern:</h3>
     {{ Form::open(array('route' => array('offers.update', Input::old('id')), 'method' => 'put')) }}
     @else
@@ -33,7 +33,7 @@
     {{ Form::open(array('route' => 'offers.store')) }}
     @endif
       {{ Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'Angebotsname')) }}
-      {{ Form::text('amount', '', array('class' => 'form-control', 'placeholder' => 'Preis')) }}
+      {{ Form::text('amount', '', array('class' => 'form-control', 'placeholder' => 'Preis in €')) }}
       {{ Form::text('startDate', '', array('class' => 'form-control date', 'placeholder' => 'Gültig von')) }}
       {{ Form::text('endDate', '', array('class' => 'form-control date', 'placeholder' => 'Gültig bis')) }}
       <span><b>Kategorie:</b> {{ Form::select('category_id', Category::all()->lists('name', 'id'), null, array('class' => 'form-control')) }}</span>
@@ -98,7 +98,7 @@
   </div>
   @if( ! Auth::guest() && Auth::user()->is_admin == 1)
   <div id="categories">
-      @if(count(Input::old()) > 0)
+      @if(count(Input::old()) > 0 && Input::old('id'))
       <h3>Kategorie ändern:</h3>
       {{ Form::open(array('route' => array('categories.update', Input::old('id')), 'method' => 'put')) }}
       @else
@@ -191,14 +191,18 @@
     </table>
   </div>
   <div id="settings">
-    @if(count(Input::old()) > 0)
+    @if(count(Input::old()) > 0 && Input::old('id') && Input::old('type') == 'setting')
     <h3>Systemeinstellung ändern:</h3>
     {{ Form::open(array('route' => array('settings.update', Input::old('id')), 'method' => 'put')) }}
     @else
     <h3>Systemeinstellungen:</h3>
     {{ Form::open(array('route' => 'settings.store')) }}
     @endif
+      @if(count(Input::old()) > 0 && Input::old('id') && Input::old('type') == 'setting')
+      {{ Form::label('name', Input::old('name'), array('class' => 'form-control')) }}
+      @else
       {{ Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'Einstellung')) }}
+      @endif
       {{ Form::text('value', '', array('class' => 'form-control', 'placeholder' => 'Wert')) }}
       {{ Form::submit('Speichern', array('class' => 'btn btn-primary')) }}
     {{ Form::close() }}

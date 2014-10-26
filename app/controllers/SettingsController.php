@@ -42,6 +42,7 @@ class SettingsController extends \BaseController {
 
 		$input = array(
 			'id' => $setting->id,
+			'type' => 'setting',
 			'name' => $setting->name,
 			'value' => $setting->value
 		);
@@ -60,17 +61,17 @@ class SettingsController extends \BaseController {
 	{
 		$setting = Setting::find($id);
 
-		$input = Input::only('name', 'value');	
-		$validator = Validator::make($input, array('name' => 'required', 'value' => 'required'));
+		$input = Input::only('id', 'value');
+		$validator = Validator::make($input, array('value' => 'required'));
 
 		if($validator->fails())
 		{
 			$input['id'] = $setting->id;
+			$input['type'] = 'setting';
 			return Redirect::back()->withInput($input)->withErrors($validator);
 		}
 		else
 		{
-			$setting->name = $input['name'];
 			$setting->value = $input['value'];
 			if($setting->save())
 			{
@@ -78,6 +79,7 @@ class SettingsController extends \BaseController {
 			}
 
 			$input['id'] = $setting->id;
+			$input['type'] = 'setting';
 			return Redirect::back()->withInput($input)->withErrors(array('unknownError' => 'Es ist ein unbekannter Fehler aufgetreten.'));
 		}
 	}
@@ -96,6 +98,5 @@ class SettingsController extends \BaseController {
 
 		return Redirect::back()->with(array('success' => 'Die Einstellung wurde erfolgreich gelöscht.'));
 	}
-
 
 }

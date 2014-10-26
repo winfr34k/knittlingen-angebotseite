@@ -37,7 +37,7 @@ class OffersController extends \BaseController {
 	public function store()
 	{
 		$input = Input::only('name', 'description', 'amount', 'category_id', 'startDate', 'endDate');
-		$validator = Validator::make($input, array('name' => 'required', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
+		$validator = Validator::make($input, array('name' => 'required|unique:offers', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
 
 		if($validator->fails())
 		{
@@ -88,6 +88,7 @@ class OffersController extends \BaseController {
 
 		$input = array(
 			'id' => $offer->id,
+			'type' => 'offer',
 			'name' => $offer->name,
 			'amount' => number_format($offer->amount, 2, ',', '.'),
 			'startDate' => $offer->startDate,
@@ -110,12 +111,13 @@ class OffersController extends \BaseController {
 	{
 		$offer = Offer::find($id);
 
-		$input = Input::only('name', 'description', 'amount', 'category_id', 'startDate', 'endDate');	
+		$input = Input::only('id', 'name', 'description', 'amount', 'category_id', 'startDate', 'endDate');
 		$validator = Validator::make($input, array('name' => 'required', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
 
 		if($validator->fails())
 		{
 			$input['id'] = $offer->id;
+			$input['type'] = 'offer';
 			return Redirect::back()->withInput($input)->withErrors($validator);
 		}
 		else
@@ -132,6 +134,7 @@ class OffersController extends \BaseController {
 			}
 
 			$input['id'] = $offer->id;
+			$input['type'] = 'offer';
 			return Redirect::back()->withInput($input)->withErrors(array('unknownError' => 'Es ist ein unbekannter Fehler aufgetreten.'));
 		}
 	}
