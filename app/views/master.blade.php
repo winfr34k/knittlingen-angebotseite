@@ -38,25 +38,25 @@
 <body>
   <div id="mainarea">
     <div id="header"></div>
-    
-    <div class="navbar navbar-inverse" role="navigation">
-        <div class="container-fluid">
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li @if($title == 'Home' || starts_with($title, 'Angebot:')) class="active" @endif><a href="/">Home</a></li>
-              <li @if($title == 'Angebote durchsuchen') class="active" @endif><a href="/offers/search">Angebote durchsuchen</a></li>
-              @if(Auth::guest())
-              <li @if($title == 'Login') class="active" @endif><a href="/login">Login</a></li>
-              @else
-              <li><a href="/logout">Logout</a></li>              
-              <li @if($title == 'ACP') class="active" @endif><a href="/admin">Adminbereich</a></li>
-              @endif
-              <li @if($title == 'Impressum') class="active" @endif><a href="/imprint">Impressum</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </div>
-
+    <div class="responsive">
+		<div class="navbar navbar-inverse" role="navigation">
+			<div class="container-fluid">
+			  <div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+				  <li @if($title == 'Home' || starts_with($title, 'Angebot:')) class="active" @endif><a href="/">Home</a></li>
+				  <li @if($title == 'Angebote durchsuchen') class="active" @endif><a href="/offers/search">Angebote durchsuchen</a></li>
+				  @if(Auth::guest())
+				  <li @if($title == 'Login') class="active" @endif><a href="/login">Login</a></li>
+				  @else
+				  <li><a href="/logout">Logout</a></li>              
+				  <li @if($title == 'ACP') class="active" @endif><a href="/admin">Adminbereich</a></li>
+				  @endif
+				  <li @if($title == 'Impressum') class="active" @endif><a href="/imprint">Impressum</a></li>
+				</ul>
+			  </div><!--/.nav-collapse -->
+			</div><!--/.container-fluid -->
+		  </div>
+	  </div>
     <div id="content">
       @if(isset($errors) && count($errors) > 0)
         @foreach($errors->all() as $error)
