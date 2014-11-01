@@ -11,32 +11,38 @@
 |
 */
 
-//Login & Session
-Route::get('login', 'SessionsController@create');
-Route::get('logout', 'SessionsController@destroy');
-Route::resource('session', 'SessionsController');
+//Login & Logout (Sessions)
+Route::get('login', array('before' => 'guest', 'as' => 'session.create', 'uses' => 'SessionsController@create'));
+Route::post('sessions', array('before' => 'guest', 'as' => 'session.store', 'uses' => 'SessionsController@store'));
+Route::get('logout', array('before' => 'auth', 'uses' => 'SessionsController@destroy'));
+Route::delete('sessions/{id}', array('before' => 'auth', 'as' => 'session.destroy', 'uses' => 'SessionsController@destroy'));
 
 //Offers
 Route::get('/', 'OffersController@index');
-Route::get('offers/search', 'OffersController@search');
 Route::resource('offers', 'OffersController');
 
 //Imprint
 Route::get('/imprint', 'MiscController@imprint');
 
 //ACP (only used for display)
-Route::get('admin', 'MiscController@acp');
-
-//Companies (only used for database-exchange)
-Route::resource('companies', 'CompaniesController');
+Route::get('admin', array('before' => 'auth', 'uses' => 'MiscController@acp'));
 
 //Users (only used for database-exchange)
-Route::put('users/updatePassword/{id}', 'UsersController@updatePassword');
-Route::put('users/updateEmail/{id}', 'UsersController@updateEmail');
-Route::resource('users', 'UsersController');
+Route::get('users/{id}/edit', array('before' => 'auth', 'as' => 'users.edit', 'uses' => 'UsersController@edit'));
+Route::post('users', array('before' => 'auth', 'as' => 'users.store', 'uses' => 'UsersController@store'));
+Route::put('users/{id}', array('before' => 'auth', 'as' => 'users.update', 'uses' => 'UsersController@update'));
+Route::put('users/updatePassword/{id}', array('before' => 'auth', 'as' => 'users.updatePassword', 'uses' => 'UsersController@updatePassword'));
+Route::put('users/updateEmail/{id}', array('before' => 'auth', 'as' => 'users.updateEmail', 'uses' => 'UsersController@updateEmail'));
+Route::delete('users/{id}', array('before' => 'auth', 'as' => 'users.destroy', 'uses' => 'UsersController@destroy'));
 
 //Categories (only used for database-exchange)
-Route::resource('categories', 'CategoriesController');
+Route::get('categories/{id}/edit', array('before' => 'auth', 'as' => 'categories.edit', 'uses' => 'CategoriesController@edit'));
+Route::post('categories', array('before' => 'auth', 'as' => 'categories.store', 'uses' => 'CategoriesController@store'));
+Route::put('categories/{id}', array('before' => 'auth', 'as' => 'categories.update', 'uses' => 'CategoriesController@update'));
+Route::delete('categories/{id}', array('before' => 'auth', 'as' => 'categories.destroy', 'uses' => 'CategoriesController@destroy'));
 
 //Settings (only used for database-exchange)
-Route::resource('settings', 'SettingsController');
+Route::get('settings/{id}/edit', array('before' => 'auth', 'as' => 'settings.edit', 'uses' => 'SettingsController@edit'));
+Route::post('settings', array('before' => 'auth', 'as' => 'settings.store', 'uses' => 'SettingsController@store'));
+Route::put('settings/{id}', array('before' => 'auth', 'as' => 'settings.update', 'uses' => 'SettingsController@update'));
+Route::delete('settings/{id}', array('before' => 'auth', 'as' => 'settings.destroy', 'uses' => 'SettingsController@destroy'));

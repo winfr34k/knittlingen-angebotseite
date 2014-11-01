@@ -2,7 +2,14 @@
 
 class OffersController extends \BaseController {
 
-	private function floatvalue($strValue) 
+	/**
+	 * Helper function to convert regional floating point declarations
+	 * into the one used by our DB.
+	 *
+	 * @param $strValue
+	 * @return float $floatValue
+	 */
+	private function floatValue($strValue)
 	{ 
 	   $floatValue = preg_replace("/(^[0-9]*)(\\.|,)([0-9]*)(.*)/", "\\1.\\3", $strValue); 
 
@@ -23,12 +30,6 @@ class OffersController extends \BaseController {
 		return View::make('frontend.home', array('title' => "Home", 'offers' => Offer::all()));
 	}
 
-	public function search($keywords = '') 
-	{
-		return View::make('frontend.search', array('title' => 'Angebote durchsuchen'));
-	}
-
-
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -36,6 +37,8 @@ class OffersController extends \BaseController {
 	 */
 	public function store()
 	{
+		$this->beforeFilter('auth');
+
 		$input = Input::only('name', 'description', 'amount', 'category_id', 'startDate', 'endDate');
 		$validator = Validator::make($input, array('name' => 'required|unique:offers', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
 
@@ -48,7 +51,7 @@ class OffersController extends \BaseController {
 			$offer = new Offer();
 			$offer->name = $input['name'];
 			$offer->description = $input['description'];
-			$offer->amount = $this->floatvalue($input['amount']);
+			$offer->amount = $this->floatValue($input['amount']);
 			$offer->startDate = $input['startDate'];
 			$offer->endDate = $input['endDate'];
 			$offer->company_id = Auth::user()->company->id;
@@ -84,6 +87,8 @@ class OffersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
+		$this->beforeFilter('auth');
+
 		$offer = Offer::find($id);
 
 		$input = array(
@@ -109,6 +114,8 @@ class OffersController extends \BaseController {
 	 */
 	public function update($id)
 	{
+		$this->beforeFilter('auth');
+
 		$offer = Offer::find($id);
 
 		$input = Input::only('id', 'name', 'description', 'amount', 'category_id', 'startDate', 'endDate');
@@ -124,7 +131,7 @@ class OffersController extends \BaseController {
 		{
 			$offer->name = $input['name'];
 			$offer->description = $input['description'];
-			$offer->amount = $this->floatvalue($input['amount']);
+			$offer->amount = $this->floatValue($input['amount']);
 			$offer->startDate = $input['startDate'];
 			$offer->endDate = $input['endDate'];
 			$offer->category_id = $input['category_id'];
@@ -148,6 +155,8 @@ class OffersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
+		$this->beforeFilter('auth');
+
 		$offer = Offer::find($id);
 		$offer->delete();
 
