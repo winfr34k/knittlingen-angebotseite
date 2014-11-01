@@ -12,19 +12,6 @@
   </ul>
 
   <div id="myOffers">
-    <script>
-    $(function() {
-      $( ".date" ).datepicker({
-        showWeek: true,
-        dateFormat: 'yy-mm-dd',
-        dayNamesShort: $.datepicker.regional.de.dayNamesShort,
-        dayNames: $.datepicker.regional.de.dayNames,
-        monthNamesShort: $.datepicker.regional.de.monthNamesShort,
-        monthNames: $.datepicker.regional.de.monthNames,
-        firstDay: 1
-      });
-    });
-    </script>
     @if(count(Input::old()) > 0 && Input::old('id') && Input::old('type') == 'offer')
     <h3>Angebot ändern:</h3>
     {{ Form::open(array('route' => array('offers.update', Input::old('id')), 'method' => 'put')) }}

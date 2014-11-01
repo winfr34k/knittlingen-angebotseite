@@ -14,25 +14,8 @@
   <script src="/js/jquery-ui.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/jquery-ui-i18n.min.js"></script>
-  <script>      
-      $(function()
-      {
-        //Register tabs on element#tabs
-        $('#tabs').tabs
-        ({
-           active: sessionStorage['tabs'], //read from local storage, event activated onLoad
-           activate: function(event,ui) //Activated whenever you switch tabs
-           {
-            sessionStorage[''+this.id]=(ui.newPanel.index()-1); //Create new local storage or saving the tab's index to it
-           }
-        });
-      });
+  <script src="/js/app.js"></script>
 
-      $(function() {
-      $( "#accordion" ).accordion();
-      });
-  </script>
-  
   <title>{{ $title }} | GVV-Angebotsseite</title>
 </head>
 <body>
