@@ -13,7 +13,7 @@
 
 //Login & Logout (Sessions)
 Route::get('login', array('before' => 'guest', 'as' => 'session.create', 'uses' => 'SessionsController@create'));
-Route::post('sessions', array('before' => 'guest|csrf', 'as' => 'session.store', 'uses' => 'SessionsController@store'));
+Route::post('sessions', array('before' => 'guest', 'as' => 'session.store', 'uses' => 'SessionsController@store'));
 Route::get('logout', array('before' => 'auth', 'uses' => 'SessionsController@destroy'));
 Route::delete('sessions/{id}', array('before' => 'auth', 'as' => 'session.destroy', 'uses' => 'SessionsController@destroy'));
 
