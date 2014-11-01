@@ -29,7 +29,7 @@ class SessionsController extends \BaseController {
 
 		if(Auth::attempt(Input::only('email', 'password')))
 		{
-			return Redirect::back();
+			return Redirect::back()->with(array('success' => 'Willkommen, '.Auth::user()->name.'!'));
 		}
 		else
 		{
