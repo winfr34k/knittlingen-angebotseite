@@ -126,7 +126,16 @@ class CategoriesController extends \BaseController {
 	public function destroy($id)
 	{
 		$category = Category::find($id);
-		$category->delete();
+
+		if(count($category->offers) == 0)
+		{
+			$category->delete();
+		}
+		else
+		{
+			return Redirect::back()->withErrors(array('hasMoreThanZeroObjects' => 'Es sind noch Angebote dieser Kategorie zugeordnet.'));
+		}
+
 
 		return Redirect::back()->with(array('success' => 'Die Kategorie wurde erfolgreich gelöscht.'));
 	}
