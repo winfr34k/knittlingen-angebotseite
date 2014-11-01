@@ -34,7 +34,14 @@ class UsersController extends \BaseController {
 			{
 				$company = new Company();
 				$company->name = Input::get('name');
-				$company->website = Input::get('website');
+				if(filter_var(Input::get('website'), FILTER_VALIDATE_URL) === false)
+				{
+					$company->website = 'http://'.Input::get('website');
+				}
+				else
+				{
+					$company->website = Input::get('website');
+				}
 				$company->user_id = $user->id;
 			}
 			else
@@ -113,7 +120,15 @@ class UsersController extends \BaseController {
 
 			$company = Company::find($user->company->id);
 			$company->name = Input::get('name');
-			$company->website = Input::get('website');
+
+			if(filter_var(Input::get('website'), FILTER_VALIDATE_URL) === false)
+			{
+				$company->website = 'http://'.Input::get('website');
+			}
+			else
+			{
+				$company->website = Input::get('website');
+			}
 
 			if($user->save() && $company->save())
 			{
