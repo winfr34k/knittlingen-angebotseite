@@ -32,7 +32,7 @@
 			<td class="offername">{{ $offer->name }}</td>
 			<td class="pricetable">{{ number_format($offer->amount, 2, ',', '.') }}€</td>
 			<td class="lapsetable">{{ date_format(date_create_from_format('Y-m-d H:i:s', $offer->endDate), 'd.m.Y H:i') }}</td>
-			<td>{{ $offer->description }}</td>
+			<td>{{ Str::limit($offer->description) }}</td>
 			<td>{{ $offer->category->name }}</td>
 			<td class="edit">
 			  {{ Form::open(array('route' => array('offers.edit', $offer->id), 'method' => 'get')) }}
