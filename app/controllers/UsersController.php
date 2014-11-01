@@ -96,12 +96,20 @@ class UsersController extends \BaseController {
 		}
 		else
 		{
+			$is_admin = (Input::get('is_admin') == '1') ? '1' : '0';
+
+			if($user->id == Auth::id() && $is_admin != '1')
+			{
+				return Redirect::back()->withInput()->withErrors(array('bigStupidity' => 'Sie können sich nicht selbst die Administratorrechte wegnehmen!'));
+			}
+
 			$user->email = Input::get('email');
 			if( ! empty($input['password']))
 			{
 				$user->password = Hash::make($input['password']);
 			}
-			$user->is_admin = Input::get('is_admin');
+
+			$user->is_admin = $is_admin;
 
 			$company = Company::find($user->company->id);
 			$company->name = Input::get('name');

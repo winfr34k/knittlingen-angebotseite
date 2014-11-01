@@ -180,7 +180,7 @@
               {{ Form::open(array('route' => array('users.edit', $user->id), 'method' => 'get')) }}
                 {{ Form::button('<span class="glyphicon glyphicon-edit"></span>', array('type' => 'submit', 'class' => 'btn btn-info')) }}
               {{ Form::close() }}
-              @if($user->id != 1 || $user->company->name != Auth::user()->company->name)
+              @if($user->id != 1 || $user->id != Auth::id())
                 {{ Form::open(array('route' => array('users.destroy', $user->id), 'method' => 'delete')) }}
                   {{ Form::button('<span class="glyphicon glyphicon-trash"></span>', array('type' => 'submit', 'class' => 'btn btn-danger')) }}
                 {{ Form::close() }}
