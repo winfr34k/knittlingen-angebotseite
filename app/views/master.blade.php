@@ -50,7 +50,13 @@
       @if(Session::get('success'))
         <p class="alert alert-success"><b>Erfolg:</b> {{ Session::get('success') }}</p>
       @endif
+
+      @if(Setting::find(1)->value != '1' || (is_object(Auth::user()) && Auth::user()->is_admin == '1') || Request::is('login') || Request::is('imprint'))
       @yield('content')
+      @else
+      <h3 style="color: red">Die Seite ist derzeit offline</h3>
+      <p><b>Grund:</b> {{ Setting::find(2)->value  }}</p>
+      @endif
     </div>
     <div id="muted">
       Adventsangebote des Gewerbe- und Verkehrsverein Knittlingen | <a href="/imprint"> Impressum</a>
