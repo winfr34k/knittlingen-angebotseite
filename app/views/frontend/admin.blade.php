@@ -143,14 +143,19 @@
       </table>
   </div>
   <div id="users">
-    <h3>Neuen Benutzer Anlegen:</h3>
+    @if(count(Input::old()) > 0 && Input::old('id') && Input::old('type') == 'user')
+    <h3>Benutzer bearbeiten: {{ Input::old('name')  }}</h3>
+    {{ Form::open(array('route' => array('users.update', Input::old('id')), 'method' => 'put')) }}
+    @else
+    <h3>Neuen Benutzer anlegen:</h3>
     {{ Form::open(array('route' => 'users.store')) }}
+    @endif
       {{ Form::email('email', '', array('class' => 'form-control', 'placeholder' => 'E-Mail Adresse')) }}
       {{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password'))}}
       {{ Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'Firmenname')) }}
       {{ Form::text('website', '', array('class' => 'form-control', 'placeholder' => 'Website')) }}
       <div class="checkbox"><label>{{ Form::checkbox('is_admin', true) }} Administrator</label></div>
-      {{ Form::submit('Nutzer anlegen', array('class' => 'btn btn-primary')) }}
+      {{ Form::submit('Speichern', array('class' => 'btn btn-primary')) }}
     {{ Form::close() }}
 
     <h3>Vorhandene Benutzer:</h3>
@@ -163,20 +168,20 @@
           <th># Angebote</th>
           <th class="edit">Bearbeiten</th>
         </tr>
-        @if(count(Company::all()) > 0)
-          @foreach(Company::all() as $company)
+        @if(count(User::all()) > 0)
+          @foreach(User::all() as $user)
           <tr>
-            <td>{{ $company->id }}</td>
-            <td>{{ $company->name }}</td>
-            <td>{{ $company->user->email }}</td>
-            <td>{{ link_to($company->website) }}</td>
-            <td>{{ count($company->offers) }}</td>
+            <td>{{ $user->id }}</td>
+            <td>{{ $user->company->name }}</td>
+            <td>{{ $user->email }}</td>
+            <td>{{ link_to($user->company->website) }}</td>
+            <td>{{ count($user->offers) }}</td>
             <td class="edit">
-              {{ Form::open(array('route' => 'companies.edit')) }}
+              {{ Form::open(array('route' => array('users.edit', $user->id), 'method' => 'get')) }}
                 {{ Form::button('<span class="glyphicon glyphicon-edit"></span>', array('type' => 'submit', 'class' => 'btn btn-info')) }}
               {{ Form::close() }}
-              @if($company->id != 1 || $company->name != Auth::user()->company->name)
-                {{ Form::open(array('route' => 'companies.destroy')) }}
+              @if($user->id != 1 || $user->company->name != Auth::user()->company->name)
+                {{ Form::open(array('route' => array('users.destroy', $user->id), 'method' => 'delete')) }}
                   {{ Form::button('<span class="glyphicon glyphicon-trash"></span>', array('type' => 'submit', 'class' => 'btn btn-danger')) }}
                 {{ Form::close() }}
               @endif

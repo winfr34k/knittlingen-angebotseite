@@ -31,7 +31,46 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$input = Input::only('name', 'email', 'website', 'password', 'is_admin');
+		$validator = Validator::make($input, array('name' => 'required|unique:companies', 'email' => 'required|unique:users', 'website' => 'required', 'password' => 'required'));
+
+		if($validator->fails())
+		{
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+		else
+		{
+			$user = new User();
+			$user->email = Input::get('email');
+			$user->password = Hash::make(Input::get('password'));
+			if(Input::get('is_admin') == '1')
+			{
+				$user->is_admin = true;
+			}
+			else
+			{
+				$user->is_admin = false;
+			}
+
+			if($user->save())
+			{
+				$company = new Company();
+				$company->name = Input::get('name');
+				$company->website = Input::get('website');
+				$company->user_id = $user->id;
+			}
+			else
+			{
+				return Redirect::back()->withErrors(array('unknownError' => 'Es ist ein unbekannter Fehler beim Erstellen des Nutzers aufgetreten.'));
+			}
+
+			if($company->save())
+			{
+				return Redirect::back()->with(array('success' => 'Der Benutzer wurde erfolgreich angelegt!'));
+			}
+
+			return Redirect::back()->withInput()->withErrors(array('unknownError' => 'Es ist ein unbekannter Fehler aufgetreten.'));
+		}
 	}
 
 
@@ -55,7 +94,18 @@ class UsersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$user = User::find($id);
+
+		$input = array(
+			'id' => $user->id,
+			'type' => 'user',
+			'name' => $user->company->name,
+			'email' => $user->email,
+			'website' => $user->company->website,
+			'is_admin' => $user->is_admin
+		);
+
+		return Redirect::back()->withInput($input);
 	}
 
 
@@ -67,7 +117,39 @@ class UsersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//Used for bigger update
+		$user = User::find($id);
+
+		$input = Input::only('name', 'email', 'website', 'password', 'is_admin');
+		$validator = Validator::make($input, array('name' => 'required', 'email' => 'required', 'website' => 'required'));
+
+		if($validator->fails())
+		{
+			$input['id'] = $user->id;
+			$input['type'] = 'user';
+			return Redirect::back()->withInput($input)->withErrors($validator);
+		}
+		else
+		{
+			$user->email = Input::get('email');
+			if( ! empty($input['password']))
+			{
+				$user->password = Hash::make($input['password']);
+			}
+			$user->is_admin = Input::get('is_admin');
+
+			$company = Company::find($user->company->id);
+			$company->name = Input::get('name');
+			$company->website = Input::get('website');
+
+			if($user->save() && $company->save())
+			{
+				return Redirect::back()->with(array('success' => 'Der Benutzer wurde erfolgreich bearbeitet!'));
+			}
+
+			$input['id'] = $user->id;
+			$input['type'] = 'user';
+			return Redirect::back()->withInput($input)->withErrors(array('unknownError' => 'Es ist ein unbekannter Fehler aufgetreten.'));
+		}
 	}
 
 	public function updatePassword($id)
@@ -144,7 +226,19 @@ class UsersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$user = User::find($id);
+
+		if(count($user->offers) > 0)
+		{
+			foreach($user->offers as $offer)
+			{
+				$offer->delete();
+			}
+		}
+
+		$user->delete();
+
+		return Redirect::back()->with(array('success' => 'Der Benutzer wurde erfolgreich gelöscht.'));
 	}
 
 
