@@ -69,7 +69,7 @@
       @yield('content')
     </div>
     <div id="muted">
-      Adventsangebote des Gewerbe- und Verkehrsverein Knittlingen | <a href="/impressum.php"> Impressum</a>
+      Adventsangebote des Gewerbe- und Verkehrsverein Knittlingen | <a href="/imprint"> Impressum</a>
     </div>
   </div>
 </body>
