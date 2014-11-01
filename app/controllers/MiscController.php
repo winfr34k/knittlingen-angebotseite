@@ -9,7 +9,7 @@ class MiscController extends \BaseController {
 	 */
 	public function acp()
 	{
-		return View::make('frontend.admin', array('title' => 'ACP'));
+		return View::make('backend.admin', array('title' => 'ACP'));
 	}
 
 	public function imprint()
