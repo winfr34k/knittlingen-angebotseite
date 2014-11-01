@@ -7,9 +7,9 @@
 	{{ Form::open(array('route' => 'users.store')) }}
 	@endif
 	  {{ Form::email('email', '', array('class' => 'form-control', 'placeholder' => 'E-Mail Adresse')) }}
-	  {{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Password'))}}
+	  {{ Form::password('password', array('class' => 'form-control', 'placeholder' => 'Passwort'))}}
 	  {{ Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'Firmenname')) }}
-	  {{ Form::text('website', '', array('class' => 'form-control', 'placeholder' => 'Website')) }}
+	  {{ Form::text('website', '', array('class' => 'form-control', 'placeholder' => 'Webseite')) }}
 	  <div class="checkbox"><label>{{ Form::checkbox('is_admin', true) }} Administrator</label></div>
 	  {{ Form::submit('Speichern', array('class' => 'btn btn-primary')) }}
 	{{ Form::close() }}
