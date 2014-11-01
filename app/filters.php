@@ -43,7 +43,7 @@ Route::filter('auth', function()
 		}
 		else
 		{
-			return Redirect::guest('login');
+			return Redirect::guest('login')->withErrors(array('insufficientRights' => 'Sie müssen sich anmelden, um diese Aktion auszuführen!'));
 		}
 	}
 });
@@ -52,6 +52,22 @@ Route::filter('auth', function()
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
+});
+
+Route::filter('admin', function()
+{
+	if( ! Auth::guest() && ! Auth::user()->is_admin)
+	{
+		if (Request::ajax())
+		{
+			return Response::make('Unauthorized', 401);
+		}
+		else
+		{
+			Auth::logout();
+			return Redirect::guest('login')->withErrors(array('insufficientRights' => 'Bitte melden Sie sich mit einem Administratorkonto an, um diese Aktion auszuführen!'));
+		}
+	}
 });
 
 /*

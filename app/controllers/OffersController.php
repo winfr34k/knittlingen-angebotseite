@@ -37,7 +37,7 @@ class OffersController extends \BaseController {
 	 */
 	public function store()
 	{
-		$this->beforeFilter('auth');
+		$this->beforeFilter('admin');
 
 		$input = Input::only('name', 'description', 'amount', 'category_id', 'startDate', 'endDate');
 		$validator = Validator::make($input, array('name' => 'required|unique:offers', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
@@ -87,7 +87,7 @@ class OffersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$this->beforeFilter('auth');
+		$this->beforeFilter('admin');
 
 		$offer = Offer::find($id);
 
@@ -114,7 +114,7 @@ class OffersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$this->beforeFilter('auth');
+		$this->beforeFilter('admin');
 
 		$offer = Offer::find($id);
 
@@ -155,7 +155,7 @@ class OffersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		$this->beforeFilter('auth');
+		$this->beforeFilter('admin');
 
 		$offer = Offer::find($id);
 		$offer->delete();
