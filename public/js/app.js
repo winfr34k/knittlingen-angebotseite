@@ -27,7 +27,7 @@ $(function()
 
 //DataTables für die Hauptseite
 $(document).ready(function() {
-    $('#example').dataTable( {
+    $('#offers').dataTable( {
         "language": {
             "sEmptyTable":      "Keine Daten in der Tabelle vorhanden",
                 "sInfo":            "_START_ bis _END_ von _TOTAL_ Einträgen",

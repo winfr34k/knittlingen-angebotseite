@@ -3,7 +3,7 @@
 <h2><center>Weihnachtsangebote der Gewerbetreibenden in Knittlingen </center></h2>
 <h4><center>Arbeitsgruppe GVV Knittlingen 2020</center></h4>
 
-<table id="example" class="display" cellspacing="0" width="100%">
+<table id="offers" class="display" cellspacing="0" width="100%">
 	<thead>
 		<tr>
 			<th>Name</th>
