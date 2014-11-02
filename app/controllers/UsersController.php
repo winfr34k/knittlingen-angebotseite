@@ -51,6 +51,11 @@ class UsersController extends \BaseController {
 
 			if($company->save())
 			{
+				Mail::send('emails.welcome', array('username' => Input::get('email'), 'password' => Input::get('password')), function($message)
+				{
+					$message->to(Input::get('email'))->subject('Willkommen bei Knittlingen-2020!');
+				});
+
 				return Redirect::back()->with(array('success' => 'Der Benutzer wurde erfolgreich angelegt!'));
 			}
 

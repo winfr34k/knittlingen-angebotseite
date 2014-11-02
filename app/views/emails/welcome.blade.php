@@ -12,14 +12,14 @@
 			<table>
 				<tr>
 					<td><b>Nutzername:</b></td>
-					<td>{{ $user->name  }}</td>
+					<td>{{ $username  }}</td>
 				</tr>
 				<tr>
 					<td><b>Passwort:</b></td>
-					<td><i>Das, welches Sie gesetzt haben.</i></td>
+					<td><i>{{ $password  }}</i></td>
 				</tr>
 			</table>
-			<p>Der Link zur Seite ist: <a href="http://advent-knittlingen.de">advent-knittlingen.de</a>.</p>
+			<p>Der Link zur Seite ist: <a href="http://advent-knittlingen.de/login">advent-knittlingen.de</a>.</p>
 			<p>Viel Spaß beim Einstellen von Angeboten!</p>
 		</div>
 	</body>
