@@ -25,24 +25,28 @@
   <div id="mainarea">
     <div id="header"></div>
     <div class="responsive">
-		<div class="navbar navbar-inverse" role="navigation">
-			<div class="container-fluid">
-			  <div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-				  <li @if($title == 'Home' || starts_with($title, 'Angebot:')) class="active" @endif><a href="/">Home</a></li>
-				  @if(Auth::guest())
-				  <li @if($title == 'Login') class="active" @endif><a href="/login">Login</a></li>
-				  @else
-				  <li><a href="/logout">Logout</a></li>              
-				  <li @if($title == 'ACP') class="active" @endif><a href="/admin">Adminbereich</a></li>
-				  @endif
-				  <li @if($title == 'Impressum') class="active" @endif><a href="/imprint">Impressum</a></li>
-				</ul>
-			  </div><!--/.nav-collapse -->
-			</div><!--/.container-fluid -->
-		  </div>
-	  </div>
-    <div id="content">
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="index.php">GVV-Adventskalender</a>
+            </div>
+
+            <div class="container-fluid">
+              <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                  <li @if($title == 'Home' || starts_with($title, 'Angebot:')) class="active" @endif><a href="/">Home</a></li>
+                  @if(Auth::guest())
+                  <li @if($title == 'Login') class="active" @endif><a href="/login">Login</a></li>
+                  @else
+                  <li><a href="/logout">Logout</a></li>
+                  <li @if($title == 'ACP') class="active" @endif><a href="/admin">Adminbereich</a></li>
+                  @endif
+                  <li @if($title == 'Impressum') class="active" @endif><a href="/imprint">Impressum</a></li>
+                </ul>
+              </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+
+      <div id="content">
       @if(isset($errors) && count($errors) > 0)
         @foreach($errors->all() as $error)
         <p class="alert alert-danger"><b>Fehler:</b> {{ $error }}</p>
@@ -59,6 +63,7 @@
       <p><b>Grund:</b> {{ Setting::find(2)->value  }}</p>
       @endif
     </div>
+
     <div id="muted">
       Adventsangebote des Gewerbe- und Verkehrsverein Knittlingen | <a href="/imprint"> Impressum</a>
     </div>

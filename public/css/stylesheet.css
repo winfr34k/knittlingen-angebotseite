@@ -4,6 +4,15 @@ html, body{
 	background: url(../images/background.png);
 }
 
+body {
+    padding-top: 51px;
+}
+
+nav {
+    width: 85%;
+    margin: 0px auto;
+}
+
 button{
 	margin-left: 5px;
 }
@@ -28,9 +37,8 @@ div.navbar{
 }
 
 #mainarea{
-	width: 80%;
+	width: 85%;
 	margin: 0px auto;
-
 }
 
 #header{
@@ -38,7 +46,8 @@ div.navbar{
 	background: url(../images/header.jpg);
 	background-repeat: no-repeat;
 	background-position: center;
-	background-color: #AA0174; 
+	background-color: #AA0174;
+    border-bottom: 1px solid #222222;
 }
 
 #content{
@@ -50,6 +59,9 @@ div.navbar{
 	-webkit-box-shadow: 0 1px 40px 0px #969696;
 	-moz-box-shadow: 0 1px 40px 0px #969696;
 	box-shadow: 0 1px 40px 0px #969696;
+}
+#content h2, #content h4 {
+    text-align: center;
 }
 #muted{
 	color: #999;
