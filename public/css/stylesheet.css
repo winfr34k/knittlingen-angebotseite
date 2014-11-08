@@ -63,9 +63,14 @@ div.navbar{
 #content h2, #content h4 {
     text-align: center;
 }
+
 #muted{
 	color: #999;
 	text-align: right;
+}
+
+#imprint ul{
+    list-style: none;
 }
 
 .angebot{}
