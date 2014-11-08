@@ -211,6 +211,50 @@ class UsersController extends \BaseController {
 		}
 	}
 
+    /**
+     * Update the link for the companys' homepage
+     *
+     * @param $id
+     * @return Response
+     */
+    public function updateLink($id)
+    {
+        $input = Input::only('newWebsite');
+        $validator = Validator::make($input, array('newWebsite' => 'required'));
+
+        if($validator->fails())
+        {
+            //User wants to change link for the company
+            return Redirect::back()->withInput($input)->withErrors($validator);
+        }
+        else
+        {
+            $company = User::find(Auth::user()->id)->company;
+
+            if($company->website == $input['newWebsite'])
+            {
+                return Redirect::back()->withErrors(array('sameLinkError' => 'Der Link ist bereits auf dem aktuellen Stand.'));
+            }
+            else
+            {
+                if(filter_var(Input::get('newWebsite'), FILTER_VALIDATE_URL) === false)
+                {
+                    $company->website = 'http://'.Input::get('newWebsite');
+                }
+                else
+                {
+                    $company->website = $input['newWebsite'];
+                }
+
+                if($company->save())
+                {
+                    return Redirect::back()->with(array('success' => 'Der Link wurde erfolgreich geändert.'));
+                }
+
+                return Redirect::back()->withErrors(array('unknownError' => 'Es ist ein unbekannter Fehler aufgetreten.'));
+            }
+        }
+    }
 
 	/**
 	 * Remove the specified resource from storage.

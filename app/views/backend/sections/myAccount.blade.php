@@ -14,4 +14,11 @@
 	  {{ Form::email('newEmailRpt', '', array('class' => 'form-control', 'placeholder' => 'Neue E-Mail Adresse (wdh.)')) }}
 	  {{ Form::submit('E-Mail Adresse ändern', array('class' => 'btn btn-primary')) }}
 	{{ Form::close() }}
+
+    <h3>Link der Firmenseite ändern:</h3>
+    <p><b>Aktueller Link:</b> {{ Auth::user()->company->website }}</p>
+    {{ Form::open(array('action' => array('UsersController@updateLink', Auth::user()->id), 'method' => 'put')) }}
+      {{ Form::url('newWebsite', '', array('class' => 'form-control', 'placeholder' => 'URL')) }}
+      {{ Form::submit('Link ändern', array('class' => 'btn btn-primary')) }}
+    {{ Form::close() }}
 </div>

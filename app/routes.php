@@ -32,8 +32,9 @@ Route::get('admin', array('before' => 'auth', 'uses' => 'MiscController@acp'));
 Route::get('users/{id}/edit', array('before' => 'admin', 'as' => 'users.edit', 'uses' => 'UsersController@edit'));
 Route::post('users', array('before' => 'admin|csrf', 'as' => 'users.store', 'uses' => 'UsersController@store'));
 Route::put('users/{id}', array('before' => 'admin|csrf', 'as' => 'users.update', 'uses' => 'UsersController@update'));
-Route::put('users/updatePassword/{id}', array('before' => 'admin|csrf', 'as' => 'users.updatePassword', 'uses' => 'UsersController@updatePassword'));
-Route::put('users/updateEmail/{id}', array('before' => 'admin|csrf', 'as' => 'users.updateEmail', 'uses' => 'UsersController@updateEmail'));
+Route::put('users/updatePassword/{id}', array('before' => 'csrf', 'as' => 'users.updatePassword', 'uses' => 'UsersController@updatePassword'));
+Route::put('users/updateEmail/{id}', array('before' => 'csrf', 'as' => 'users.updateEmail', 'uses' => 'UsersController@updateEmail'));
+Route::put('users/updateLink/{id}', array('before' => 'csrf', 'as' => 'users.updateLink', 'uses' => 'UsersController@updateLink'));
 Route::delete('users/{id}', array('before' => 'admin', 'as' => 'users.destroy', 'uses' => 'UsersController@destroy'));
 
 //Categories (only used for database-exchange)

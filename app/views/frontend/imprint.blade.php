@@ -4,11 +4,12 @@
 <div id="imprint">
     <p>
         <b>Gewerbe- und Verkehrsverein Knittlingen</b><br />
-        Stuttgarter Str. 53 75438 Knittlingen<br />
+        Stuttgarter Str. 53<br />
+        75438 Knittlingen<br /><br />
         <b>Telefon:</b> 07043 / 31829<br />
-        <b>Telefax:</b> 07043 / 940275<br />
+        <b>Telefax:</b> 07043 / 940275<br /><br />
         <b>E-Mail:</b> <a href="mailto:info@gvv-knittlingen.de">info@gvv-knittlingen.de</a><br />
-        <b>Internet:</b> <a href="http://www.gvv-knittlingen.de">www.gvv-knittlingen.de</a><br />
+        <b>Internet:</b> <a href="http://www.gvv-knittlingen.de">www.gvv-knittlingen.de</a><br /><br />
         <b>Vorstand:</b> Hagen Jarzambek
     </p>
     <p><strong>Hinweis zu allen Links auf dieser Webseite / diesem Server: </strong></p>
