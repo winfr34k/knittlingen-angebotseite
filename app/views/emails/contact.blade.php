@@ -10,10 +10,10 @@
         <table>
             <tr>
                 <td>Von:</td>
-                <td>E-Mail Adresse:</td>
+                <td>{{ $from  }}</td>
             </tr>
             <tr>
-                <td>{{ $from  }}</td>
+                <td>E-Mail Adresse:</td>
                 <td>{{ $email  }}</td>
             </tr>
         </table>

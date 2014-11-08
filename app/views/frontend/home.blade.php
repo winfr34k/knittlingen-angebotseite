@@ -28,7 +28,7 @@
         </tfoot>
 
         <tbody>
-            @foreach($offers as $offer)
+            @foreach(Offer::where('startDate', '<=', new DateTime('now'))->where('endDate', '>', new DateTime('now'))->get() as $offer)
             <tr>
                 <td>{{ link_to($offer->company->website, $offer->company->name, array('target' => '_blank')) }}</td>
                 <td>{{ $offer->name }}</td>

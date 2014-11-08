@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <meta name="keywords" content="GVV, Knittlingen, Gewerbe, Verkehr, Gewerbeverein, Verkehrsverein, Angebote, Kaufen, kostenlos, gÃ¼nstig, billig, Laden, Advent, Weihnachten, Adventszeit, Adventsdangebot, Weihnachtsgeschenk, Geschenk, Computer, Apoteke, Architekt, Krankenkasse, Gastronomie, GÃ¤rtnerei, Metallverarbeitung, Schlosser, Schreiner, Maler, Versicherungen, Heizung, SanitÃ¤r, Weinbau, Tankstelle, Mode, Modellbau, Camping, Kunst, Motorrad, Fahrrad, Pizzaria, Restaurant, MRR PC-Serice, Computer, Reperatur, Webdesign, Webseite, Homepage, gestallten">
+  <meta name="description" content="Auf dieser Homepage finden Sie die Adventsangebote des Gewerbe- und Verkehrsvereins Knittlingen">
   
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/stylesheet.css">
@@ -19,7 +21,7 @@
   <script src="/js/dataTables.bootstrap.js"></script>
   <script src="/js/app.js"></script>
 
-  <title>{{ $title }} | GVV-Angebotsseite</title>
+  <title>{{ $title }} | GVV Adventskalender</title>
 </head>
 <body>
   <div id="mainarea">
@@ -27,7 +29,7 @@
     <div class="responsive">
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
             <div class="navbar-header">
-              <a class="navbar-brand" href="index.php">GVV-Adventskalender</a>
+              <a class="navbar-brand" href="index.php">GVV Adventskalender</a>
             </div>
 
             <div class="container-fluid">
@@ -65,7 +67,7 @@
     </div>
 
     <div id="muted">
-      Adventsangebote des Gewerbe- und Verkehrsverein Knittlingen | <a href="/imprint"> Impressum</a>
+      Adventskalender des <a href="http://gvv-knittlingen.de" target="_blank">Gewerbe- und Verkehrsverein Knittlingen</a> | <a href="/imprint"> Impressum</a>
     </div>
   </div>
 </body>
