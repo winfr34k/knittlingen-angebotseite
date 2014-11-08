@@ -74,6 +74,7 @@ class OffersController extends \BaseController {
 	 */
 	public function show($id)
 	{
+        Session::put('offerId', $id);
 		$offer = Offer::find($id);
 		return View::make('frontend.offer', array('title' => 'Angebot: '.$offer->name, 'offer' => $offer));
 	}
@@ -146,6 +147,38 @@ class OffersController extends \BaseController {
 		}
 	}
 
+    /**
+     * Send an eMail to the firm corresponding to the offer
+     *
+     * @param $id
+     * @return Response
+     */
+    public function postMessage($id)
+    {
+        $this->beforeFilter('csrf');
+
+        $offer = Offer::find($id);
+        $email = $offer->company->user->email;
+
+        $input = Input::only('name', 'email', 'subject', 'message');
+        $validator = Validator::make($input, array('name' => 'required', 'email' => 'required|email', 'subject' => 'required', 'message' => 'required'));
+
+        if($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator);
+        }
+        else
+        {
+            $message = nl2br(Input::get('message'));
+            /** @var String $email */
+            Mail::send('emails.contact', array('from' => Input::get('name'), 'email' => Input::get('email'), 'subject' => Input::get('subject'), 'mailMessage' => $message), function($message) use ($email)
+            {
+                $message->to($email)->subject('Knittlingen 2020 | Post für Sie!');
+            });
+
+            return Redirect::home()->with(array('success' => 'Ihre Nachricht wurde erfolgreich verschickt!'));
+        }
+    }
 
 	/**
 	 * Remove the specified resource from storage.

@@ -18,7 +18,8 @@ Route::get('logout', array('before' => 'auth', 'uses' => 'SessionsController@des
 Route::delete('sessions/{id}', array('before' => 'auth', 'as' => 'session.destroy', 'uses' => 'SessionsController@destroy'));
 
 //Offers
-Route::get('/', 'OffersController@index');
+Route::get('/', array('as' => 'home', 'uses' => 'OffersController@index'));
+Route::post('offers/{id}/mail', array('as' => 'offers.postMessage', 'uses' => 'OffersController@postMessage'));
 Route::resource('offers', 'OffersController');
 
 //Imprint
