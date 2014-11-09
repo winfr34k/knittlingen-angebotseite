@@ -45,7 +45,7 @@
     <div class="responsive">
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
             <div class="navbar-header">
-              <a class="navbar-brand" href="index.php">GVV Adventskalender</a>
+              <a class="navbar-brand" href="/">GVV Adventskalender</a>
             </div>
 
             <div class="container-fluid">
