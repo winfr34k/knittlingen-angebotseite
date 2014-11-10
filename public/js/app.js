@@ -1,32 +1,5 @@
-//Datepicker
-$(function() {
-    $( ".date" ).datepicker({
-        showWeek: true,
-        dateFormat: 'yy-mm-dd',
-        dayNamesShort: $.datepicker.regional.de.dayNamesShort,
-        dayNames: $.datepicker.regional.de.dayNames,
-        monthNamesShort: $.datepicker.regional.de.monthNamesShort,
-        monthNames: $.datepicker.regional.de.monthNames,
-        firstDay: 1
-    });
-});
-
-//Tabs für die Adminseite
-$(function()
-{
-    //Register tabs on element#tabs
-    $('#tabs').tabs
-    ({
-        active: sessionStorage['tabs'], //read from local storage, event activated onLoad
-        activate: function(event,ui) //Activated whenever you switch tabs
-        {
-            sessionStorage[''+this.id]=(ui.newPanel.index()-1); //Create new local storage or saving the tab's index to it
-        }
-    });
-});
-
-//DataTables für die Hauptseite
 $(document).ready(function() {
+    //DataTables für die Hauptseite
     $('#offers').dataTable( {
         "language": {
             "sEmptyTable":      "Keine Daten in der Tabelle vorhanden",
@@ -52,4 +25,33 @@ $(document).ready(function() {
             }
         }
     } );
+
+    //Tabs für die Adminseite
+    //Register tabs on element#tabs
+    $('#tabs').tabs
+    ({
+        active: sessionStorage['tabs'], //read from local storage, event activated onLoad
+        activate: function(event,ui) //Activated whenever you switch tabs
+        {
+            sessionStorage[''+this.id]=(ui.newPanel.index()-1); //Create new local storage or saving the tab's index to it
+        }
+    });
+
+    //Datepicker
+    $( ".date" ).datepicker({
+        showWeek: true,
+        dateFormat: 'yy-mm-dd',
+        dayNamesShort: $.datepicker.regional.de.dayNamesShort,
+        dayNames: $.datepicker.regional.de.dayNames,
+        monthNamesShort: $.datepicker.regional.de.monthNamesShort,
+        monthNames: $.datepicker.regional.de.monthNames,
+        firstDay: 1
+    });
+
+    //Editor für Angebote
+    $(".editor").jqte({
+        fsize: false,
+        format: false,
+        source: false
+    });
 } );

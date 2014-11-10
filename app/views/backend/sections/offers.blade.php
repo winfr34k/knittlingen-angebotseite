@@ -11,7 +11,7 @@
   {{ Form::text('startDate', '', array('class' => 'form-control date', 'placeholder' => 'Gültig von')) }}
   {{ Form::text('endDate', '', array('class' => 'form-control date', 'placeholder' => 'Gültig bis')) }}
   <span><b>Kategorie:</b> {{ Form::select('category_id', Category::all()->lists('name', 'id'), null, array('class' => 'form-control')) }}</span>
-  {{ Form::textarea('description', '', array('rows' => '5', 'class' => 'form-control', 'placeholder' => 'Beschreibung')) }}
+  {{ Form::textarea('description', '', array('rows' => '5', 'class' => 'form-control editor', 'placeholder' => 'Beschreibung')) }}
   {{ Form::submit('Speichern', array('class' => 'btn btn-primary')) }}
 {{ Form::close() }}
 

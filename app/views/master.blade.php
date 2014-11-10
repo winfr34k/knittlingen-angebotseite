@@ -10,11 +10,13 @@
   <link rel="stylesheet" href="/css/stylesheet.css">
   <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="/css/jquery-ui.css">
+  <link rel="stylesheet" href="/css/jquery-te.css">
   <link rel="stylesheet" href="/css/jquery.mobile.min.css">
   <link rel="stylesheet" href="/css/dataTables.bootstrap.css">
     
   <script src="/js/jquery.js"></script>
   <script src="/js/jquery-ui.js"></script>
+  <script src="/js/jquery-te.min.js"></script>
   <script src="/js/bootstrap.min.js"></script>
   <script src="/js/jquery-ui-i18n.min.js"></script>
   <script src="/js/jquery.dataTables.min.js"></script>
