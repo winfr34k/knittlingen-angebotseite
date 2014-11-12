@@ -19,7 +19,7 @@
 					<td><i>{{ $password  }}</i></td>
 				</tr>
 			</table>
-			<p>Der Link zur Seite ist: <a href="http://advent-knittlingen.de/login">advent-knittlingen.de</a>.</p>
+			<p>Der Link zur Seite ist: <a href="http://advent-knittlingen.de/login">Knittlingen-2020 | Login</a>.</p>
 			<p>Viel Spaß beim Einstellen von Angeboten!</p>
 		</div>
 	</body>
