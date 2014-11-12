@@ -60,6 +60,7 @@
                   <li><a href="/logout">Logout</a></li>
                   <li @if($title == 'ACP') class="active" @endif><a href="/admin">Adminbereich</a></li>
                   @endif
+                  <li @if($title == 'Kontakt') class="active" @endif><a href="/contact">Kontakt</a></li>
                   <li @if($title == 'Impressum') class="active" @endif><a href="/imprint">Impressum</a></li>
                 </ul>
               </div><!--/.nav-collapse -->

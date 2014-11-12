@@ -22,8 +22,12 @@ Route::get('/', array('as' => 'home', 'uses' => 'OffersController@index'));
 Route::post('offers/{id}/mail', array('as' => 'offers.postMessage', 'uses' => 'OffersController@postMessage'));
 Route::resource('offers', 'OffersController');
 
+//Contact form
+Route::get('/contact', array('as' => 'contact', 'uses' => 'MiscController@contact'));
+Route::post('/contact', array('as' => 'contact.postContact', 'uses' => 'MiscController@postContact'));
+
 //Imprint
-Route::get('/imprint', 'MiscController@imprint');
+Route::get('/imprint', array('as' => 'imprint', 'uses' => 'MiscController@imprint'));
 
 //ACP (only used for display)
 Route::get('admin', array('before' => 'auth', 'uses' => 'MiscController@acp'));
