@@ -43,7 +43,7 @@
 </head>
 <body>
   <div id="mainarea">
-    <div id="header"></div>
+    <a href="/"><div id="header"></div></a>
     <div class="responsive">
         <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
             <div class="navbar-header">
