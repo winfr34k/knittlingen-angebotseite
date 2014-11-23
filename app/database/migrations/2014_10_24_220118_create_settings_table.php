@@ -14,6 +14,7 @@ class CreateSettingsTable extends Migration {
 	{
 		Schema::create('settings', function(Blueprint $table)
 		{
+			$table->engine('InnoDB');
 			$table->increments('id');
 			$table->string('name')->unique();
 			$table->string('value')->nullable();

@@ -14,6 +14,7 @@ class CreateOffersTable extends Migration {
 	{
 		Schema::create('offers', function(Blueprint $table)
 		{
+			$table->engine('InnoDB');
 			$table->increments('id');
 			$table->string('name');
 			$table->text('description');
