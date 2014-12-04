@@ -8,8 +8,7 @@
 @endif
   {{ Form::text('name', '', array('class' => 'form-control', 'placeholder' => 'Angebotsname')) }}
   {{ Form::text('amount', '', array('class' => 'form-control', 'placeholder' => 'Preis in €')) }}
-  {{ Form::text('startDate', '', array('class' => 'form-control date', 'placeholder' => 'Gültig von')) }}
-  {{ Form::text('endDate', '', array('class' => 'form-control date', 'placeholder' => 'Gültig bis')) }}
+  {{ Form::text('endDate', '', array('class' => 'form-control date', 'placeholder' => 'Anzeigen bis')) }}
   <span><b>Kategorie:</b> {{ Form::select('category_id', Category::all()->lists('name', 'id'), null, array('class' => 'form-control')) }}</span>
   {{ Form::textarea('description', '', array('rows' => '5', 'class' => 'form-control editor', 'placeholder' => 'Beschreibung')) }}
   {{ Form::submit('Speichern', array('class' => 'btn btn-primary')) }}

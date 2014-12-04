@@ -39,7 +39,7 @@ class OffersController extends \BaseController {
 	{
 		$this->beforeFilter('admin|csrf');
 
-		$input = Input::only('name', 'description', 'amount', 'category_id', 'startDate', 'endDate');
+		$input = Input::only('name', 'description', 'amount', 'category_id', 'endDate');
 		$validator = Validator::make($input, array('name' => 'required|unique:offers', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
 
 		if($validator->fails())
@@ -52,8 +52,7 @@ class OffersController extends \BaseController {
 			$offer->name = $input['name'];
 			$offer->description = $input['description'];
 			$offer->amount = $this->floatValue($input['amount']);
-			$offer->startDate = $input['startDate'];
-			$offer->endDate = $input['endDate'];
+       		$offer->endDate = $input['endDate'];
 			$offer->company_id = Auth::user()->company->id;
 			$offer->category_id = $input['category_id'];
 			if($offer->save())
@@ -97,7 +96,6 @@ class OffersController extends \BaseController {
 			'type' => 'offer',
 			'name' => $offer->name,
 			'amount' => number_format($offer->amount, 2, ',', '.'),
-			'startDate' => $offer->startDate,
 			'endDate' => $offer->endDate,
 			'category_id' => $offer->category_id,
 			'description' => $offer->description
@@ -119,7 +117,7 @@ class OffersController extends \BaseController {
 
 		$offer = Offer::find($id);
 
-		$input = Input::only('id', 'name', 'description', 'amount', 'category_id', 'startDate', 'endDate');
+		$input = Input::only('id', 'name', 'description', 'amount', 'category_id', 'endDate');
 		$validator = Validator::make($input, array('name' => 'required', 'description' => 'required', 'category_id' => 'required', 'amount' => 'required'));
 
 		if($validator->fails())
@@ -133,8 +131,7 @@ class OffersController extends \BaseController {
 			$offer->name = $input['name'];
 			$offer->description = $input['description'];
 			$offer->amount = $this->floatValue($input['amount']);
-			$offer->startDate = $input['startDate'];
-			$offer->endDate = $input['endDate'];
+    		$offer->endDate = $input['endDate'];
 			$offer->category_id = $input['category_id'];
 			if($offer->save())
 			{
