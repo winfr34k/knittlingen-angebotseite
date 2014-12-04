@@ -47,4 +47,9 @@ class MiscController extends \BaseController {
             return Redirect::home()->with(array('success' => 'Ihre Nachricht wurde erfolgreich verschickt!'));
         }
     }
+
+    public function latenight()
+    {
+        return View::make('frontend.latenight', array('title' => 'Late-Night Aktion'));
+    }
 }

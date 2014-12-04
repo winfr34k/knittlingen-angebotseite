@@ -68,6 +68,13 @@ div.navbar{
 	color: #999;
 	text-align: right;
 }
+#latenight{
+    text-align: center;
+}
+
+#latenight div#hidden{
+    display: none;
+}
 
 #imprint ul{
     list-style: none;

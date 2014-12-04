@@ -22,6 +22,9 @@ Route::get('/', array('as' => 'home', 'uses' => 'OffersController@index'));
 Route::post('offers/{id}/mail', array('as' => 'offers.postMessage', 'uses' => 'OffersController@postMessage'));
 Route::resource('offers', 'OffersController');
 
+//Imprint
+Route::get('/latenight', array('as' => 'latenight', 'uses' => 'MiscController@latenight'));
+
 //Contact form
 Route::get('/contact', array('as' => 'contact', 'uses' => 'MiscController@contact'));
 Route::post('/contact', array('as' => 'contact.postContact', 'uses' => 'MiscController@postContact'));
