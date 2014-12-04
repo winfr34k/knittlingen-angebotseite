@@ -10,7 +10,7 @@ body {
 
 nav {
     width: 85%;
-    margin: 0px auto;
+    margin: 0px auto auto auto;
 }
 
 button{
@@ -32,7 +32,7 @@ td.edit form{
 }
 
 div.navbar{
-	margin: 0px auto;
+    margin: 0px auto;
 	border-radius: 0px;
 }
 
@@ -40,14 +40,21 @@ div.navbar{
 	width: 85%;
 	margin: 0px auto;
 }
+@media all and (min-width: 1025px){
+    #header{
+        height: 250px;
+        background: url(../images/header.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #AA0174;
+        border-bottom: 1px solid #222222;
+    }
+}
 
-#header{
-	height: 250px;
-	background: url(../images/header.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: #AA0174;
-    border-bottom: 1px solid #222222;
+@media all and (min-width: 768px) and (max-width: 999px){
+    .navbar-brand{
+        display: none;
+    }
 }
 
 #content{

@@ -44,29 +44,34 @@
 <body>
   <div id="mainarea">
     <a href="/"><div id="header"></div></a>
-    <div class="responsive">
-        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="/">GVV Adventskalender</a>
-            </div>
 
-            <div class="container-fluid">
-              <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                  <li @if($title == 'Home' || starts_with($title, 'Angebot:')) class="active" @endif><a href="/">Home</a></li>
-                  <li @if($title == 'Late-Night Aktion') class="active" @endif><a href="/latenight">Late-Night Aktion</a></li>
-                  @if(Auth::guest())
-                  <li @if($title == 'Login') class="active" @endif><a href="/login">Login</a></li>
-                  @else
-                  <li><a href="/logout">Logout</a></li>
-                  <li @if($title == 'ACP') class="active" @endif><a href="/admin">Adminbereich</a></li>
-                  @endif
-                  <li @if($title == 'Kontakt') class="active" @endif><a href="/contact">Kontakt</a></li>
-                  <li @if($title == 'Impressum') class="active" @endif><a href="/imprint">Impressum</a></li>
-                </ul>
-              </div><!--/.nav-collapse -->
-            </div><!--/.container-fluid -->
-        </nav>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">GVV Adventskalender</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li @if($title == 'Home' || starts_with($title, 'Angebot:')) class="active" @endif><a href="/">Home</a></li>
+              <li @if($title == 'Late-Night Aktion') class="active" @endif><a href="/latenight">Late-Night Aktion</a></li>
+              @if(Auth::guest())
+              <li @if($title == 'Login') class="active" @endif><a href="/login">Login</a></li>
+              @else
+              <li><a href="/logout">Logout</a></li>
+              <li @if($title == 'ACP') class="active" @endif><a href="/admin">Adminbereich</a></li>
+              @endif
+              <li @if($title == 'Kontakt') class="active" @endif><a href="/contact">Kontakt</a></li>
+              <li @if($title == 'Impressum') class="active" @endif><a href="/imprint">Impressum</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 
       <div id="content">
       @if(isset($errors) && count($errors) > 0)
@@ -89,6 +94,5 @@
     <div id="muted">
       Adventskalender des <a href="http://gvv-knittlingen.de" target="_blank">Gewerbe- und Verkehrsverein Knittlingen</a> | <a href="/imprint"> Impressum</a>
     </div>
-  </div>
 </body>
 </html>
