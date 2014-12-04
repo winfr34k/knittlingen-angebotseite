@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/css/jquery-te.css">
   <link rel="stylesheet" href="/css/jquery.mobile.min.css">
   <link rel="stylesheet" href="/css/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="/css/shariff.min.css">
     
   <script src="/js/jquery.js"></script>
   <script src="/js/jquery-ui.js"></script>
@@ -89,10 +90,12 @@
       <h3 style="color: red">Die Seite ist derzeit offline</h3>
       <p><b>Grund:</b> {{ Setting::find(2)->value  }}</p>
       @endif
+      <div class="shariff"></div>
     </div>
 
     <div id="muted">
       Adventskalender des <a href="http://gvv-knittlingen.de" target="_blank">Gewerbe- und Verkehrsverein Knittlingen</a> | <a href="/imprint"> Impressum</a>
     </div>
+    <script src="/js/shariff.min.js"></script>
 </body>
 </html>
