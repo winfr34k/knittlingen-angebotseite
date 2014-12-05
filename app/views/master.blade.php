@@ -43,9 +43,6 @@
   <title>{{ $title }} | GVV Adventskalender</title>
 </head>
 <body>
-  <div id="mainarea">
-    <a href="/"><div id="header"></div></a>
-
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -73,6 +70,9 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
+  <div id="mainarea">
+    <a href="/"><div id="header"></div></a>
 
       <div id="content">
       @if(isset($errors) && count($errors) > 0)
