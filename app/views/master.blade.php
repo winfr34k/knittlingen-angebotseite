@@ -14,6 +14,9 @@
   <link rel="stylesheet" href="/css/jquery.mobile.min.css">
   <link rel="stylesheet" href="/css/dataTables.bootstrap.css">
   <link rel="stylesheet" href="/css/shariff.min.css">
+
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/png">
+  <link rel="icon" href="/images/favicon.png" type="image/png">
     
   <script src="/js/jquery.js"></script>
   <script src="/js/jquery-ui.js"></script>
