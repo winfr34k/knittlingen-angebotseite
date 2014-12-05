@@ -5,7 +5,7 @@
 
 <p style="text-align: center;"><strong><u>NEU:</u> Besuchen Sie unsere {{ link_to_route('latenight', 'Late-Night Shopping-Aktion') }} am Donnerstag 11. und 18. Dezember 2014 bis 21.00 Uhr</strong></p>
 
-<div style="overflow: hidden;">
+<div id="offers-wrapper">
     <table id="offers" class="table table-striped table-bordered hover" cellspacing="0" width="100%">
         <thead>
             <tr>

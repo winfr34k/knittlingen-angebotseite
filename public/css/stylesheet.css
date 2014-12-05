@@ -27,6 +27,10 @@ table{
 	background: #F0F0F0;
 }
 
+div#offers-wrapper{
+    overflow: auto;
+}
+
 td.edit form{
 	float: left;
 }
