@@ -23,7 +23,13 @@ table{
 }
 
 div#offers-wrapper{
-    overflow: auto;
+	overflow: hidden;
+}
+
+@media all and (min-width: 768px) and (max-width: 999px){
+	div#offers-wrapper{
+		overflow: auto;
+	}
 }
 
 td.edit form{

@@ -12,6 +12,8 @@
         <b>Internet:</b> <a href="http://www.gvv-knittlingen.de">www.gvv-knittlingen.de</a><br /><br />
         <b>Vorstand:</b> Hagen Jarzambek
     </p>
+    <p><strong>Wir möchten Sie darauf hinweisen, dass Ihr Aufenthalt auf dieser Website mittels einer lokal installieren Version von <a href="http://piwik.org/">Piwik</a> getrackt wird.<br/>
+    Ihre Daten werden <i>nicht</i> an Dritte weitergegeben und dienen lediglich der Selbstkontrolle über den Erfolg des Projekts. <br/>Wir danken für Ihr Verständnis.</strong></p>
     <p><strong>Hinweis zu allen Links auf dieser Webseite / diesem Server: </strong></p>
     <p>Mit dem Urteil vom 12. Mai 1998 - 312 O 85/98 - "Haftung für Links" hat das Landgericht (LG) Hamburg entschieden, dass man durch die Erstellung eines Links die Inhalte der gelinkten Seite ggf. mit zu verantworten hat. Dies kann - so das Gericht - nur dadurch verhindert werden, dass man sich ausdrücklich von diesen Inhalten distanziert. Da wir Links zu Geschäftspartnern und sonstigen Webseiten oder Servern besitzen - auf dessen Inhalte und Gestaltung wir keinen Einfluss haben - distanzieren wir uns ausdrücklich von sämtlichen Links auf unserer Webseite / unserem Server. Das gilt für alle vorhandenen / kommenden und dagewesenen Links. Wir weisen deshalb darauf hin, dass wir nicht für Inhalte gelinkter Webseiten verantwortlich gemacht werden können.</p>
     <p>Copyright © by Gewerbe- und Verkehrsverein Fauststadt Knittlingen e.V.</p>
